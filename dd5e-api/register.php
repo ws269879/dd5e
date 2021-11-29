@@ -3,13 +3,15 @@ require_once(__DIR__.'/includes/db.php');
 require_once(__DIR__.'/includes/reponse.php');
 require_once(__DIR__.'/includes/utils.php');
 
+$httpResponse = new HTTPResponse();
+$myDb = new DBConnection();
+
 if (!correctRequestType('POST')) {
     $httpResponse->setStatusCode(405);
     $httpResponse->setContent('Expected POST');
     $httpResponse->fullResponse();
 }
 
-$httpResponse = new HTTPResponse();
 
 if (!isset($_POST["password"]) || !isset($_POST["email"]) || !isset($_POST["firstname"]) || !isset($_POST["lastname"])) {
     $httpResponse->setStatusCode(400);
@@ -21,8 +23,6 @@ $password = $_POST["password"];
 $email = $_POST["email"];
 $firstname = $_POST["firstname"];
 $lastname = $_POST["lastname"];
-
-$myDb = new DBConnection();
 
 $salt = getenv('SALT');
 $pepper = getenv('PEPPER');

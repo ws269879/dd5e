@@ -22,7 +22,7 @@ class User {
         return $this->lastName;
     }
 
-    function getEmailName(): string {
+    function getEmail(): string {
         return $this->email;
     }
 }

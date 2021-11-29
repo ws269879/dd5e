@@ -3,14 +3,15 @@ require_once(__DIR__.'/includes/db.php');
 require_once(__DIR__.'/includes/reponse.php');
 require_once(__DIR__.'/includes/utils.php');
 
+
+$httpResponse = new HTTPResponse();
+$myDb = new DBConnection();
+
 if (!correctRequestType('POST')) {
     $httpResponse->setStatusCode(405);
     $httpResponse->setContent('Expected POST');
     $httpResponse->fullResponse();
 }
-
-$httpResponse = new HTTPResponse();
-$myDb = new DBConnection();
 
 if (!isset($_POST["password"]) || !isset($_POST["email"])) {
     $httpResponse->setStatusCode(400);
@@ -44,5 +45,5 @@ $myDb->insert(
 );
 setcookie('auth', $token);
 $httpResponse->setStatusCode(200);
-$httpResponse->setContent('');
+$httpResponse->setContent('success');
 $httpResponse->fullResponse();
