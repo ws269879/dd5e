@@ -16,11 +16,13 @@ if (!isset($_POST["item"]) || !isset($_POST["type"])) {
 }
 
 $item = $_POST['item'];
-$type = $_POST['type'];
+$type = strtolower($_POST['type']);
 
 $user = authMiddleware($myDb);
 
 if (correctRequestType('POST')) {
+
+    $validType = $myDb->fetch("SELECT * FROM `types` WHERE `type` LIKE ?;", array($type))
 
     $favs = $myDb->insert(
         'INSERT INTO `favourites` (`item`, `email`, `type`) VALUES (?, ?, ?);',
