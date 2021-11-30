@@ -23,18 +23,17 @@ if (!correctRequestType('GET')) {
 }
 
 $user = authMiddleware($myDb);
+$dbResponse = $myDb->fetch("SELECT `users`.`firstName`, `users`.`lastName`, `users`.`email` FROM `users` WHERE `email` = ?", array($email));
 
-$favs = $myDb->fetchAll(
-    'SELECT `favourites`.`item`, `favourites`.`type` FROM `favourites` WHERE `email` LIKE ?;',
-    array($user->getEmail())
-);
-
-
-if ($favs === false) {
+if ($dbResponse === false) {
     $httpResponse->setStatusCode(404);
     $httpResponse->fullResponse();
 }
 
 $httpResponse->setStatusCode(200);
-$httpResponse->setContent(json_encode($favs));
+$httpResponse->setContent(array(
+    'firstName'=>$dbResponse['firstName'], 
+    'lastName'=>$dbResponse['lastName'], 
+    'email'=>$dbResponse['email'], 
+));
 $httpResponse->fullResponse();
