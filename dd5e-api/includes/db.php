@@ -1,10 +1,10 @@
 <?php
 class DBConnection {
-    private ?PDO $connection = null;
-    private string $DB_HOST = "plesk.remote.ac";
-    private string $DB_NAME = "WS269879_dd5e";
-    private string $DB_USERNAME = "WS269879_dd5e";
-    private string $DB_PASSWORD = "aDwv82%7";
+    private PDO $connection;
+    private string $DB_HOST;
+    private string $DB_NAME;
+    private string $DB_USERNAME;
+    private string $DB_PASSWORD;
     private string $DB_CHARSET = "utf8";
     private array $DB_OPTIONS = [
         PDO::ATTR_ERRMODE            => PDO::ERRMODE_EXCEPTION,
@@ -13,6 +13,14 @@ class DBConnection {
     ];
     
     function __construct() {
+        $this->setup();
+    }
+
+    private function setup($secondTry = false) {
+        $this->DB_HOST = getenv('DB_HOST');
+        $this->DB_NAME = getenv('DB_NAME');
+        $this->DB_USERNAME = getenv('DB_USERNAME');
+        $this->DB_PASSWORD = getenv('DB_PASSWORD');
         $dsn = "mysql:host=".$this->DB_HOST.";dbname=".$this->DB_NAME.";charset=".$this->DB_CHARSET;
         $this->connection = new PDO($dsn, $this->DB_USERNAME, $this->DB_PASSWORD, $this->DB_OPTIONS);
     }

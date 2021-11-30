@@ -2,8 +2,16 @@
 require_once(__DIR__.'/includes/db.php');
 require_once(__DIR__.'/includes/reponse.php');
 require_once(__DIR__.'/includes/utils.php');
+require_once(__DIR__.'/includes/dot-env.php');
 
 $httpResponse = new HTTPResponse();
+$envsSet = setMyEnv();
+if (!$envsSet) {
+    $httpResponse->setStatusCode(500);
+    $httpResponse->setContent('ENVS');
+    $httpResponse->fullResponse();
+}
+
 $myDb = new DBConnection();
 
 if (!correctRequestType('GET')) {

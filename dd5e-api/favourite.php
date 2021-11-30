@@ -2,6 +2,17 @@
 require_once(__DIR__.'/includes/db.php');
 require_once(__DIR__.'/includes/reponse.php');
 require_once(__DIR__.'/includes/utils.php');
+require_once(__DIR__.'/includes/dot-env.php');
+
+$httpResponse = new HTTPResponse();
+$envsSet = setMyEnv();
+if (!$envsSet) {
+    $httpResponse->setStatusCode(500);
+    $httpResponse->setContent('ENVS');
+    $httpResponse->fullResponse();
+}
+
+$myDb = new DBConnection();
 
 if (!correctRequestType('POST') && !correctRequestType('DELETE')) {
     $httpResponse->setStatusCode(405);
@@ -22,7 +33,7 @@ $user = authMiddleware($myDb);
 
 if (correctRequestType('POST')) {
 
-    $validType = $myDb->fetch("SELECT * FROM `types` WHERE `type` LIKE ?;", array($type))
+    $validType = $myDb->fetch("SELECT * FROM `types` WHERE `type` LIKE ?;", array($type));
 
     $favs = $myDb->insert(
         'INSERT INTO `favourites` (`item`, `email`, `type`) VALUES (?, ?, ?);',
