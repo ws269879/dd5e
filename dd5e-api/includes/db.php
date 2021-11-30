@@ -13,10 +13,6 @@ class DBConnection {
     ];
     
     function __construct() {
-        $this->setup();
-    }
-
-    private function setup($secondTry = false) {
         $this->DB_HOST = getenv('DB_HOST');
         $this->DB_NAME = getenv('DB_NAME');
         $this->DB_USERNAME = getenv('DB_USERNAME');

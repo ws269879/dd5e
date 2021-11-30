@@ -1,7 +1,7 @@
 <?php
 
 function setMyEnv(bool $secondTry = false): bool {
-    if (getenv('DB_HOST') === null || getenv('DB_NAME') === null || getenv('DB_USERNAME') === null || getenv('DB_PASSWORD') === null || getenv('SALT') === null || getenv('PEPPER') === null || getenv('TOKEN') === null) {
+    if (getenv('DB_HOST', true) === false || getenv('DB_NAME', true) === false || getenv('DB_USERNAME', true) === false || getenv('DB_PASSWORD', true) === false || getenv('SALT', true) === false || getenv('PEPPER', true) === false || getenv('TOKEN', true) === false) {
 
         $path = __DIR__.'/.env';
         if (!is_readable($path)) {
@@ -9,6 +9,7 @@ function setMyEnv(bool $secondTry = false): bool {
         }
 
         $lines = file($path, FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
+        var_dump($lines);
         foreach ($lines as $line) {
 
             if (strpos(trim($line), '#') === 0) {
@@ -26,7 +27,7 @@ function setMyEnv(bool $secondTry = false): bool {
             }
         }
 
-        if (getenv('DB_HOST') === null || getenv('DB_NAME') === null || getenv('DB_USERNAME') === null || getenv('DB_PASSWORD') === null || getenv('SALT') === null || getenv('PEPPER') === null || getenv('TOKEN') === null) {
+        if (getenv('DB_HOST', true) === false || getenv('DB_NAME', true) === false || getenv('DB_USERNAME', true) === false || getenv('DB_PASSWORD', true) === false || getenv('SALT', true) === false || getenv('PEPPER', true) === false || getenv('TOKEN', true) === false) {
 
             if ($secondTry) {
                 return false;

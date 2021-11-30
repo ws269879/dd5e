@@ -15,9 +15,9 @@ $host = getenv('DB_HOST');
 $name = getenv('DB_NAME');
 $username = getenv('DB_USERNAME');
 $password = getenv('DB_PASSWORD');
-$httpResponse->setContent(json_encode(array(
+$httpResponse->setContent(array(
     'project'=>'dd5e-api-project',
     'createdBy'=>'ws269879',
     'php'=>phpversion()
-)), JSON_FORCE_OBJECT);
+);
 $httpResponse->fullResponse();
