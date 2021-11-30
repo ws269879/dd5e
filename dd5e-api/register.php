@@ -22,6 +22,8 @@ if (!correctRequestType('POST')) {
     $httpResponse->fullResponse();
 }
 
+// Load post data from JSON body
+$_POST = json_decode(file_get_contents("php://input"), true);
 
 if (!isset($_POST["password"]) || !isset($_POST["email"]) || !isset($_POST["firstname"]) || !isset($_POST["lastname"])) {
     $httpResponse->setStatusCode(400);

@@ -22,6 +22,9 @@ if (!correctRequestType('POST') && !correctRequestType('DELETE')) {
     $httpResponse->fullResponse();
 }
 
+// Load post data from JSON body
+$_POST = json_decode(file_get_contents("php://input"), true);
+
 if (!isset($_POST["item"]) || !isset($_POST["type"])) {
     $httpResponse->setStatusCode(400);
     $httpResponse->setContent('Expected item');
