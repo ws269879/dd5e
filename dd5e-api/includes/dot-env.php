@@ -26,7 +26,7 @@ function setMyEnv(bool $secondTry = false): bool {
             }
         }
 
-        if (getenv('DB_HOST') === null || getenv('DB_NAME') === null || getenv('DB_USERNAME') === null || getenv('DB_PASSWORD') === null || getenv('SALT') === null || getenv('PEPPER') === null || getenv('TOKEN') === null) { {
+        if (getenv('DB_HOST') === null || getenv('DB_NAME') === null || getenv('DB_USERNAME') === null || getenv('DB_PASSWORD') === null || getenv('SALT') === null || getenv('PEPPER') === null || getenv('TOKEN') === null) {
 
             if ($secondTry) {
                 return false;
@@ -37,4 +37,3 @@ function setMyEnv(bool $secondTry = false): bool {
     }
     return true;
 }
-

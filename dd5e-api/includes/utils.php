@@ -1,7 +1,7 @@
 <?php 
 include_once(__DIR__.'/user.php');
-require_once(__DIR__.'/includes/db.php');
-require_once(__DIR__.'/includes/reponse.php');
+require_once(__DIR__.'/db.php');
+require_once(__DIR__.'/reponse.php');
 
 function authMiddleware(DBConnection $dbConnection): User {
     $httpResponse = new HTTPResponse();
