@@ -1,0 +1,14 @@
+<div>
+    <ngx-skeleton-loader
+            *ngIf="isLoading"
+            [count]="count"
+            [theme]="theme"
+            [animation]="animation"
+            [appearance]="appearance"
+    ></ngx-skeleton-loader>
+</div>
+<div [@myAnimation]="isLoading ? 'loading' : 'loaded'">
+    <ng-content *ngIf="!isLoading">
+
+    </ng-content>
+</div>
