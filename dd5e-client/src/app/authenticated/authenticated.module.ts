@@ -13,7 +13,7 @@ import { SpellsComponent } from './spells/spells.component'
 import { RacesComponent } from './races/races.component'
 import { TraitsComponent } from './traits/traits.component'
 import { AlignmentsComponent } from './alignments/alignments.component'
-import { AlignmentDetailsComponent } from './alignments/details/details.component'
+import { AlignmentsDetailsComponent } from './alignments/details/details.component'
 import { RouterModule } from '@angular/router'
 import {MatButtonModule} from '@angular/material/button'
 import {MatIconModule} from '@angular/material/icon'
@@ -23,7 +23,8 @@ import {ClassesDetailsComponent} from './classes/details/details.component'
 import {MatExpansionModule} from '@angular/material/expansion'
 import {MatListModule} from '@angular/material/list';
 import { FeatsDetailsComponent } from './feats/details/details.component';
-import { LanguagesDetailsComponent } from './languages/details/details.component'
+import { LanguagesDetailsComponent } from './languages/details/details.component';
+import { MagicSchoolDetailsComponent } from './magic-schools/details/magic-school-details.component'
 
 @NgModule({
   declarations: [
@@ -38,10 +39,11 @@ import { LanguagesDetailsComponent } from './languages/details/details.component
     RacesComponent,
     TraitsComponent,
     AlignmentsComponent,
-    AlignmentDetailsComponent,
+    AlignmentsDetailsComponent,
     ClassesDetailsComponent,
     FeatsDetailsComponent,
-    LanguagesDetailsComponent
+    LanguagesDetailsComponent,
+    MagicSchoolDetailsComponent
   ],
   imports: [
     CommonModule,

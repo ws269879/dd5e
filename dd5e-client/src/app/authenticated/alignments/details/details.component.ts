@@ -7,7 +7,7 @@ import {ApiService, IAlignmentDetails} from '../../../service/api.service'
   templateUrl: './details.component.html',
   styleUrls: ['./details.component.css']
 })
-export class AlignmentDetailsComponent implements OnInit {
+export class AlignmentsDetailsComponent implements OnInit {
 
   value: string
   details: IAlignmentDetails

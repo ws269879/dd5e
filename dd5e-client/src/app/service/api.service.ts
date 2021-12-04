@@ -92,6 +92,15 @@ export class ApiService {
     }
   }
 
+  async getMagicSchoolDetails(school: string) {
+    try {
+      const url = `${this.baseUrl}/magic-schools/${school}`
+      return await this._http.get<IMagicSchoolDetails>(url).toPromise()
+    } catch (e) {
+      return null
+    }
+  }
+
   async getMonsters() {
     try {
       const url = `${this.baseUrl}/monsters`
@@ -257,4 +266,11 @@ export interface ILanguageDetails {
   type: string;
   script: string;
   typical_speakers: string[]
+}
+
+export interface IMagicSchoolDetails {
+  name: string;
+  url: string;
+  index: string;
+  desc: string;
 }

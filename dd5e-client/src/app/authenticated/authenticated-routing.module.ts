@@ -3,7 +3,7 @@ import { RouterModule, Routes } from '@angular/router'
 import {DashboardComponent} from './dashboard/dashboard.component'
 import {AlignmentsComponent} from './alignments/alignments.component'
 import {ClassesComponent} from './classes/classes.component'
-import {AlignmentDetailsComponent} from './alignments/details/details.component'
+import {AlignmentsDetailsComponent} from './alignments/details/details.component'
 import {FeatsComponent} from './feats/feats.component'
 import {LanguagesComponent} from './languages/languages.component'
 import {MagicSchoolsComponent} from './magic-schools/magic-schools.component'
@@ -15,6 +15,7 @@ import {TraitsComponent} from './traits/traits.component'
 import {ClassesDetailsComponent} from './classes/details/details.component'
 import {FeatsDetailsComponent} from './feats/details/details.component'
 import {LanguagesDetailsComponent} from './languages/details/details.component'
+import {MagicSchoolDetailsComponent} from './magic-schools/details/magic-school-details.component'
 
 const routes: Routes = [
   {
@@ -30,7 +31,7 @@ const routes: Routes = [
       },
       {
         path: ':alignment',
-        component: AlignmentDetailsComponent
+        component: AlignmentsDetailsComponent
       }
     ]
   },
@@ -81,8 +82,8 @@ const routes: Routes = [
         component: MagicSchoolsComponent
       },
       {
-        path: ':magic-schools',
-        component: AlignmentDetailsComponent
+        path: ':magic-school',
+        component: MagicSchoolDetailsComponent
       }
     ]
   },
@@ -95,7 +96,7 @@ const routes: Routes = [
       },
       {
         path: ':monsters',
-        component: AlignmentDetailsComponent
+        component: AlignmentsDetailsComponent
       }
     ]
   },
@@ -108,7 +109,7 @@ const routes: Routes = [
       },
       {
         path: ':races',
-        component: AlignmentDetailsComponent
+        component: AlignmentsDetailsComponent
       }
     ]
   },
@@ -121,7 +122,7 @@ const routes: Routes = [
       },
       {
         path: ':skills',
-        component: AlignmentDetailsComponent
+        component: AlignmentsDetailsComponent
       }
     ]
   },
@@ -134,7 +135,7 @@ const routes: Routes = [
       },
       {
         path: ':spells',
-        component: AlignmentDetailsComponent
+        component: AlignmentsDetailsComponent
       }
     ]
   },
@@ -147,7 +148,7 @@ const routes: Routes = [
       },
       {
         path: ':traits',
-        component: AlignmentDetailsComponent
+        component: AlignmentsDetailsComponent
       }
     ]
   }
