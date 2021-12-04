@@ -38,9 +38,9 @@ export class ApiService {
     }
   }
 
-  async getClassDetails(alignment: string) {
+  async getClassDetails(className: string) {
     try {
-      const url = `${this.baseUrl}/classes/${alignment}`
+      const url = `${this.baseUrl}/classes/${className}`
       return await this._http.get<IClassDetails>(url).toPromise()
     } catch (e) {
       return null
@@ -51,6 +51,15 @@ export class ApiService {
     try {
       const url = `${this.baseUrl}/feats`
       return await this._http.get<IApiMultipleResponse>(url).toPromise()
+    } catch (e) {
+      return null
+    }
+  }
+
+  async getFeatDetails(feat: string) {
+    try {
+      const url = `${this.baseUrl}/feats/${feat}`
+      return await this._http.get<IFeatDetails>(url).toPromise()
     } catch (e) {
       return null
     }
@@ -215,4 +224,19 @@ export interface IClassDetails {
     url: string;
   }[];
   url: string;
+}
+
+export interface IFeatDetails {
+  name: string;
+  url: string;
+  index: string;
+  prerequisites: {
+    ability_score: {
+      index: string;
+      name: string;
+      url: string;
+    };
+    minimum_score: number;
+  }[];
+  desc: string[]
 }

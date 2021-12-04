@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {ApiService, IClassDetails} from '../../../service/api.service'
+import {ApiService, IClassDetails, IFeatDetails} from '../../../service/api.service'
 import {ActivatedRoute, Params} from '@angular/router'
 
 @Component({
@@ -7,20 +7,20 @@ import {ActivatedRoute, Params} from '@angular/router'
   templateUrl: './details.component.html',
   styleUrls: ['./details.component.css']
 })
-export class ClassesDetailsComponent implements OnInit {
+export class FeatsDetailsComponent implements OnInit {
 
   value: string
-  details: IClassDetails
+  details: IFeatDetails
 
   constructor(private _route: ActivatedRoute,
               private _apiService: ApiService) { }
 
   async ngOnInit() {
     this._route.params.forEach((params: Params) => {
-      this.value = params['class']
+      this.value = params['feat']
     })
 
-    this.details = await this._apiService.getClassDetails(this.value)
+    this.details = await this._apiService.getFeatDetails(this.value)
   }
 
 }

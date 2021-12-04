@@ -21,7 +21,8 @@ import {MatTooltipModule} from '@angular/material/tooltip'
 import {MatGridListModule} from '@angular/material/grid-list'
 import {ClassesDetailsComponent} from './classes/details/details.component'
 import {MatExpansionModule} from '@angular/material/expansion'
-import {MatListModule} from '@angular/material/list'
+import {MatListModule} from '@angular/material/list';
+import { FeatsDetailsComponent } from './feats/details/details.component'
 
 @NgModule({
   declarations: [
@@ -37,7 +38,8 @@ import {MatListModule} from '@angular/material/list'
     TraitsComponent,
     AlignmentsComponent,
     AlignmentDetailsComponent,
-    ClassesDetailsComponent
+    ClassesDetailsComponent,
+    FeatsDetailsComponent
   ],
   imports: [
     CommonModule,
