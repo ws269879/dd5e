@@ -17,6 +17,7 @@ import {FeatsDetailsComponent} from './feats/details/details.component'
 import {LanguagesDetailsComponent} from './languages/details/details.component'
 import {MagicSchoolDetailsComponent} from './magic-schools/details/magic-school-details.component'
 import {MonstersDetailsComponent} from './monsters/details/details.component'
+import {SkillsDetailsComponent} from './skills/details/details.component'
 
 const routes: Routes = [
   {
@@ -122,8 +123,8 @@ const routes: Routes = [
         component: SkillsComponent
       },
       {
-        path: ':skills',
-        component: AlignmentsDetailsComponent
+        path: ':skill',
+        component: SkillsDetailsComponent
       }
     ]
   },

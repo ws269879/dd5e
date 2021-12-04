@@ -137,6 +137,15 @@ export class ApiService {
     }
   }
 
+  async getSkillDetails(skill: string) {
+    try {
+      const url = `${this.baseUrl}/skills/${skill}`
+      return await this._http.get<ISkillDetails>(url).toPromise()
+    } catch (e) {
+      return null
+    }
+  }
+
   async getSpells() {
     try {
       const url = `${this.baseUrl}/spells`
@@ -404,5 +413,17 @@ export interface IMonsterDetails {
       }[][];
     };
   }[];
+  url: string;
+}
+
+export interface ISkillDetails {
+  index: string;
+  name: string;
+  desc: string[];
+  ability_score: {
+    index: string;
+    name: string;
+    url: string;
+  };
   url: string;
 }
