@@ -15,7 +15,7 @@ export class LoginService {
 
   private baseOptions = {
     withCredentials: true
-}
+  }
 
   constructor(private _http: HttpClient) {
     this.userDetails$ = this._userDetailsSubject.asObservable()
@@ -27,9 +27,6 @@ export class LoginService {
       return from(this.fetchUserDetails())
         .pipe(switchMap((_) => this._userDetailsSubject.asObservable()))
     }
-    this._userDetailsSubject.asObservable().pipe(take(1)).toPromise().then((val) => {
-      console.log(val)
-    })
     return this._userDetailsSubject.asObservable()
   }
 

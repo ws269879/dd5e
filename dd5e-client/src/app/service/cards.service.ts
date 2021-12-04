@@ -22,7 +22,7 @@ export class CardsService {
       }
     },
     {
-      title: 'classes',
+      title: 'Classes',
       content: 'Take a look at the classes D&D 5e has to offer',
       links: [
         {
@@ -36,7 +36,7 @@ export class CardsService {
       }
     },
     {
-      title: 'feats',
+      title: 'Feats',
       content: 'Take a look at the feats D&D 5e has to offer',
       links: [
         {
@@ -50,7 +50,7 @@ export class CardsService {
       }
     },
     {
-      title: 'languages',
+      title: 'Languages',
       content: 'Take a look at the languages D&D 5e has to offer',
       links: [
         {
@@ -59,12 +59,12 @@ export class CardsService {
         }
       ],
       image: {
-        link: '/assets/img/dashboard/languages.jpg',
+        link: '/assets/img/dashboard/languages.webp',
         type: 'img'
       }
     },
     {
-      title: 'magic schools',
+      title: 'Magic Schools',
       content: 'Take a look at the magic schools D&D 5e has to offer',
       links: [
         {
@@ -78,7 +78,7 @@ export class CardsService {
       }
     },
     {
-      title: 'monsters',
+      title: 'Monsters',
       content: 'Take a look at the monsters D&D 5e has to offer',
       links: [
         {
@@ -92,7 +92,7 @@ export class CardsService {
       }
     },
     {
-      title: 'skills',
+      title: 'Skills',
       content: 'Take a look at the skills D&D 5e has to offer',
       links: [
         {
@@ -106,7 +106,7 @@ export class CardsService {
       }
     },
     {
-      title: 'spells',
+      title: 'Spells',
       content: 'Take a look at the spells D&D 5e has to offer',
       links: [
         {
@@ -120,7 +120,7 @@ export class CardsService {
       }
     },
     {
-      title: 'races',
+      title: 'Races',
       content: 'Take a look at the races D&D 5e has to offer',
       links: [
         {
@@ -134,7 +134,7 @@ export class CardsService {
       }
     },
     {
-      title: 'traits',
+      title: 'Traits',
       content: 'Take a look at the traits D&D 5e has to offer',
       links: [
         {
