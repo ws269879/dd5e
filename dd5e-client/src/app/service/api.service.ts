@@ -14,7 +14,16 @@ export class ApiService {
   async getAlignments() {
     try {
       const url = `${this.baseUrl}/alignments`
-      return await this._http.get<IApiResponse>(url).toPromise()
+      return await this._http.get<IApiMultipleResponse>(url).toPromise()
+    } catch (e) {
+      return null
+    }
+  }
+
+  async getAlignmentDetails(alignment: string) {
+    try {
+      const url = `${this.baseUrl}/alignments/${alignment}`
+      return await this._http.get<IAlignmentDetails>(url).toPromise()
     } catch (e) {
       return null
     }
@@ -23,7 +32,16 @@ export class ApiService {
   async getClasses() {
     try {
       const url = `${this.baseUrl}/classes`
-      return await this._http.get<IApiResponse>(url).toPromise()
+      return await this._http.get<IApiMultipleResponse>(url).toPromise()
+    } catch (e) {
+      return null
+    }
+  }
+
+  async getClassDetails(alignment: string) {
+    try {
+      const url = `${this.baseUrl}/classes/${alignment}`
+      return await this._http.get<IClassDetails>(url).toPromise()
     } catch (e) {
       return null
     }
@@ -32,7 +50,7 @@ export class ApiService {
   async getFeats() {
     try {
       const url = `${this.baseUrl}/feats`
-      return await this._http.get<IApiResponse>(url).toPromise()
+      return await this._http.get<IApiMultipleResponse>(url).toPromise()
     } catch (e) {
       return null
     }
@@ -41,7 +59,7 @@ export class ApiService {
   async getLanguages() {
     try {
       const url = `${this.baseUrl}/languages`
-      return await this._http.get<IApiResponse>(url).toPromise()
+      return await this._http.get<IApiMultipleResponse>(url).toPromise()
     } catch (e) {
       return null
     }
@@ -50,7 +68,7 @@ export class ApiService {
   async getMagicSchools() {
     try {
       const url = `${this.baseUrl}/magic-schools`
-      return await this._http.get<IApiResponse>(url).toPromise()
+      return await this._http.get<IApiMultipleResponse>(url).toPromise()
     } catch (e) {
       return null
     }
@@ -59,7 +77,7 @@ export class ApiService {
   async getMonsters() {
     try {
       const url = `${this.baseUrl}/monsters`
-      return await this._http.get<IApiResponse>(url).toPromise()
+      return await this._http.get<IApiMultipleResponse>(url).toPromise()
     } catch (e) {
       return null
     }
@@ -68,7 +86,7 @@ export class ApiService {
   async getRaces() {
     try {
       const url = `${this.baseUrl}/races`
-      return await this._http.get<IApiResponse>(url).toPromise()
+      return await this._http.get<IApiMultipleResponse>(url).toPromise()
     } catch (e) {
       return null
     }
@@ -77,7 +95,7 @@ export class ApiService {
   async getSkills() {
     try {
       const url = `${this.baseUrl}/skills`
-      return await this._http.get<IApiResponse>(url).toPromise()
+      return await this._http.get<IApiMultipleResponse>(url).toPromise()
     } catch (e) {
       return null
     }
@@ -86,7 +104,7 @@ export class ApiService {
   async getSpells() {
     try {
       const url = `${this.baseUrl}/spells`
-      return await this._http.get<IApiResponse>(url).toPromise()
+      return await this._http.get<IApiMultipleResponse>(url).toPromise()
     } catch (e) {
       return null
     }
@@ -95,14 +113,14 @@ export class ApiService {
   async getTraits() {
     try {
       const url = `${this.baseUrl}/traits`
-      return await this._http.get<IApiResponse>(url).toPromise()
+      return await this._http.get<IApiMultipleResponse>(url).toPromise()
     } catch (e) {
       return null
     }
   }
 }
 
-interface IApiResponse {
+interface IApiMultipleResponse {
   count: number;
   results: IResponseData[];
 }
@@ -110,5 +128,91 @@ interface IApiResponse {
 export interface IResponseData {
   index: string;
   name: string;
+  url: string;
+}
+
+export interface IAlignmentDetails {
+  index: string;
+  name: string;
+  abbreviation: string;
+  desc: string;
+  url: string;
+}
+
+export interface IClassDetails {
+  index: string;
+  name: string;
+  hit_die: number;
+  proficiency_choices: {
+    choose: 2;
+    type: string;
+    from: {
+      index: string;
+      name: string;
+      url: string;
+    }[];
+  }[];
+  proficiencies: {
+    index: string;
+    name: string;
+    url: string;
+  }[];
+  saving_throws: {
+    index: string;
+    name: string;
+    url: string;
+  }[];
+  starting_equipment: {
+    equipment: {
+      index: string;
+      name: string;
+      url: string;
+    };
+    quantity: number;
+  }[];
+  starting_equipment_options: {
+    choose: 1;
+    type: string;
+    from: {
+      equipment?: {
+        index: string;
+        name: string;
+        url: string;
+      };
+      equipment_option?: {
+        choose: number;
+        type: string;
+        from: {
+          equipment_category: {
+            index: string;
+            name: string;
+            url: string;
+          };
+        };
+      };
+      quantity: number;
+    }[];
+  }[];
+  class_levels: string;
+  multi_classing: {
+    prerequisites: {
+      ability_score: {
+        index: string;
+        name: string;
+        url: string;
+      };
+      minimum_score: number;
+    }[];
+    proficiencies: {
+      index: string;
+      name: string;
+      url: string;
+    }[];
+  };
+  subclasses: {
+    index: string;
+    name: string;
+    url: string;
+  }[];
   url: string;
 }

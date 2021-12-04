@@ -1,0 +1,9 @@
+.list-item-vertical-content {
+  display: flex;
+  flex-direction: column !important;
+}
+
+.inner-list {
+  margin-left: 1em;
+  margin-right: 1em;
+}

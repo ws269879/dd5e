@@ -1,0 +1,157 @@
+<header class="page-header">
+  <div class="o-grid">
+    <div class="page-header__title">
+      <div style="display: flex; flex-direction: row">
+        <a routerLink="/app/classes"
+           matTooltip="Back to all classes"
+           mat-icon-button
+           aria-label="Back"
+        >
+          <mat-icon>keyboard_backspace</mat-icon>
+        </a>
+        <app-skeleton [isLoading]="!details" [theme]="{height: '40px', width: '70px'}">
+          <h1 *ngIf="details">{{details.name}}</h1>
+        </app-skeleton>
+      </div>
+      <app-skeleton [isLoading]="!details" [theme]="{height: '40px', width: '70px'}">
+        <h2 *ngIf="details">Hit die: d{{details.hit_die}}</h2>
+      </app-skeleton>
+    </div>
+  </div>
+</header>
+
+<div class="page-content">
+  <div class="o-grid" style="padding-top: 0">
+    <h2>Details</h2>
+    <app-skeleton [isLoading]="!details" [theme]="{height: '50vh', width: '100%'}">
+      <mat-accordion *ngIf="details" multi>
+        <mat-expansion-panel>
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              Proficiencies
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+          <mat-list>
+            <mat-list-item *ngFor="let proficiency of details.proficiencies">
+              <p>{{proficiency.name}}</p>
+            </mat-list-item>
+          </mat-list>
+        </mat-expansion-panel>
+
+        <mat-expansion-panel>
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              Optional Additional Proficiencies
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+          <mat-list>
+            <div class="list-item-vertical-content" *ngFor="let proficiency_choice of details.proficiency_choices">
+              <p class="mat-h3">You can choose up to {{proficiency_choice.choose}} from the following</p>
+              <ul class="inner-list">
+                <li *ngFor="let proficiency of proficiency_choice.from">
+                  <p>{{proficiency.name}}</p>
+                </li>
+              </ul>
+            </div>
+          </mat-list>
+        </mat-expansion-panel>
+
+        <mat-expansion-panel>
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              Saving Throws
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+          <mat-list>
+            <mat-list-item *ngFor="let saving_throw of details.saving_throws">
+              <p>{{saving_throw.name}}</p>
+            </mat-list-item>
+          </mat-list>
+        </mat-expansion-panel>
+
+        <mat-expansion-panel>
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              Starting Equipment
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+          <mat-list>
+            <mat-list-item *ngFor="let equipment of details.starting_equipment">
+              <p>{{equipment.quantity}} x {{equipment.equipment.name}}</p>
+            </mat-list-item>
+          </mat-list>
+        </mat-expansion-panel>
+
+        <mat-expansion-panel>
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              Optional Additional Equipment
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+          <mat-list>
+            <div class="list-item-vertical-content" *ngFor="let starting_equipment_option of details.starting_equipment_options">
+              <p class="mat-h3">You can choose up to {{starting_equipment_option.choose}} from the following</p>
+              <ul class="inner-list">
+                <li *ngFor="let equipment of starting_equipment_option.from">
+                  <p *ngIf="equipment.equipment">{{equipment.quantity}} x {{equipment.equipment.name}}</p>
+                  <p *ngIf="equipment.equipment_option">{{equipment.equipment_option.choose}} x {{equipment.equipment_option.from.equipment_category.name}}: </p>
+                </li>
+              </ul>
+            </div>
+          </mat-list>
+        </mat-expansion-panel>
+
+        <mat-expansion-panel>
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              Multi Classing Opportunities
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+          <mat-list>
+            <mat-accordion multi>
+              <mat-expansion-panel>
+                <mat-expansion-panel-header>
+                  <mat-panel-title>
+                    Prerequisites
+                  </mat-panel-title>
+                </mat-expansion-panel-header>
+                <mat-list>
+                  <mat-list-item *ngFor="let prerequisite of details.multi_classing.prerequisites">
+                    <p>{{prerequisite.ability_score.name}}: {{prerequisite.minimum_score}}</p>
+                  </mat-list-item>
+                </mat-list>
+              </mat-expansion-panel>
+              <mat-expansion-panel>
+                <mat-expansion-panel-header>
+                  <mat-panel-title>
+                    Proficiencies
+                  </mat-panel-title>
+                </mat-expansion-panel-header>
+                <mat-list>
+                  <mat-list-item *ngFor="let proficiency of details.multi_classing.proficiencies">
+                    <p>{{proficiency.name}}</p>
+                  </mat-list-item>
+                </mat-list>
+              </mat-expansion-panel>
+            </mat-accordion>
+          </mat-list>
+        </mat-expansion-panel>
+
+        <mat-expansion-panel>
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              Subclasses
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+          <mat-list>
+            <mat-list-item *ngFor="let subclass of details.subclasses">
+              <p>{{subclass.name}}</p>
+            </mat-list-item>
+          </mat-list>
+        </mat-expansion-panel>
+      </mat-accordion>
+    </app-skeleton>
+  </div>
+</div>
+
+

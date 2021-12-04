@@ -3,7 +3,7 @@ import { RouterModule, Routes } from '@angular/router'
 import {DashboardComponent} from './dashboard/dashboard.component'
 import {AlignmentsComponent} from './alignments/alignments.component'
 import {ClassesComponent} from './classes/classes.component'
-import {DetailsComponent} from './details/details.component'
+import {AlignmentDetailsComponent} from './alignments/details/details.component'
 import {FeatsComponent} from './feats/feats.component'
 import {LanguagesComponent} from './languages/languages.component'
 import {MagicSchoolsComponent} from './magic-schools/magic-schools.component'
@@ -12,6 +12,7 @@ import {RacesComponent} from './races/races.component'
 import {SkillsComponent} from './skills/skills.component'
 import {SpellsComponent} from './spells/spells.component'
 import {TraitsComponent} from './traits/traits.component'
+import {ClassesDetailsComponent} from './classes/details/details.component'
 
 const routes: Routes = [
   {
@@ -27,7 +28,7 @@ const routes: Routes = [
       },
       {
         path: ':alignment',
-        component: DetailsComponent
+        component: AlignmentDetailsComponent
       }
     ]
   },
@@ -40,7 +41,7 @@ const routes: Routes = [
       },
       {
         path: ':class',
-        component: DetailsComponent
+        component: ClassesDetailsComponent
       }
     ]
   },
@@ -52,8 +53,8 @@ const routes: Routes = [
         component: FeatsComponent
       },
       {
-        path: ':feat',
-        component: DetailsComponent
+        path: ':feats',
+        component: AlignmentDetailsComponent
       }
     ]
   },
@@ -65,8 +66,8 @@ const routes: Routes = [
         component: LanguagesComponent
       },
       {
-        path: ':language',
-        component: DetailsComponent
+        path: ':languages',
+        component: AlignmentDetailsComponent
       }
     ]
   },
@@ -78,8 +79,8 @@ const routes: Routes = [
         component: MagicSchoolsComponent
       },
       {
-        path: ':school',
-        component: DetailsComponent
+        path: ':magic-schools',
+        component: AlignmentDetailsComponent
       }
     ]
   },
@@ -91,8 +92,8 @@ const routes: Routes = [
         component: MonstersComponent
       },
       {
-        path: ':monster',
-        component: DetailsComponent
+        path: ':monsters',
+        component: AlignmentDetailsComponent
       }
     ]
   },
@@ -104,8 +105,8 @@ const routes: Routes = [
         component: RacesComponent
       },
       {
-        path: ':race',
-        component: DetailsComponent
+        path: ':races',
+        component: AlignmentDetailsComponent
       }
     ]
   },
@@ -117,8 +118,8 @@ const routes: Routes = [
         component: SkillsComponent
       },
       {
-        path: ':skill',
-        component: DetailsComponent
+        path: ':skills',
+        component: AlignmentDetailsComponent
       }
     ]
   },
@@ -130,8 +131,8 @@ const routes: Routes = [
         component: SpellsComponent
       },
       {
-        path: ':spell',
-        component: DetailsComponent
+        path: ':spells',
+        component: AlignmentDetailsComponent
       }
     ]
   },
@@ -143,8 +144,8 @@ const routes: Routes = [
         component: TraitsComponent
       },
       {
-        path: ':trait',
-        component: DetailsComponent
+        path: ':traits',
+        component: AlignmentDetailsComponent
       }
     ]
   }

@@ -15,6 +15,7 @@ import {SharedModule} from './component/shared.module'
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations'
 import {MatListModule} from '@angular/material/list'
 import {RouterModule} from '@angular/router'
+import {MatTooltipModule} from '@angular/material/tooltip'
 
 @NgModule({
   declarations: [
@@ -35,7 +36,8 @@ import {RouterModule} from '@angular/router'
     MatSidenavModule,
     SharedModule,
     MatListModule,
-    RouterModule
+    RouterModule,
+    MatTooltipModule
   ],
   bootstrap: [AppComponent]
 })

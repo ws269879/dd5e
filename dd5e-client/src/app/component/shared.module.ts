@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core'
-import { CommonModule, DatePipe } from '@angular/common'
+import {CommonModule, DatePipe, JsonPipe} from '@angular/common'
 import {SkeletonComponent} from './skeleton/skeleton.component'
 import {CardComponent} from './card/card.component'
 import {NgxSkeletonLoaderModule} from 'ngx-skeleton-loader'
@@ -30,9 +30,6 @@ import {MatPaginatorModule} from '@angular/material/paginator'
     MatTableModule,
     MatSortModule,
     MatPaginatorModule
-  ],
-  providers: [
-    DatePipe
   ],
   exports: [
     SkeletonComponent,

@@ -6,7 +6,11 @@
     </button>
     <span>dd5e explorer</span>
     <span class="example-spacer"></span>
-    <button *ngIf="user" (click)="logoutClick()" mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
+    <button *ngIf="user"
+            matTooltip="Logout"
+            (click)="logoutClick()"
+            mat-icon-button
+            aria-label="Logout">
       <mat-icon>exit_to_app</mat-icon>
     </button>
   </mat-toolbar>
