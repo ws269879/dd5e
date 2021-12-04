@@ -1,0 +1,322 @@
+<header class="page-header">
+  <div class="o-grid">
+    <div class="page-header__title">
+      <div style="display: flex; flex-direction: row">
+        <a routerLink="/app/monsters"
+           matTooltip="Back to all monsters"
+           mat-icon-button
+           aria-label="Back"
+        >
+          <mat-icon>keyboard_backspace</mat-icon>
+        </a>
+        <app-skeleton [isLoading]="!details" [theme]="{height: '40px', width: '70px'}">
+          <h1 *ngIf="details">{{details.name}}</h1>
+        </app-skeleton>
+      </div>
+    </div>
+  </div>
+</header>
+
+<div class="page-content">
+  <div class="o-grid" style="padding-top: 0">
+    <h2>Overview</h2>
+    <app-skeleton [isLoading]="!details" [theme]="{height: '50vh', width: '100%'}">
+      <mat-accordion *ngIf="details" multi>
+        <mat-expansion-panel>
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              Details
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+          <mat-list>
+            <mat-list-item>
+              <mat-divider></mat-divider>
+              <div style="width: 100%; display: flex; flex-direction: row; justify-content: space-between; padding-bottom: 20px">
+                <p>Hit Dice:</p>
+                <p>{{details.hit_dice}}</p>
+              </div>
+            </mat-list-item>
+            <mat-list-item>
+              <mat-divider></mat-divider>
+              <div style="width: 100%; display: flex; flex-direction: row; justify-content: space-between; padding-bottom: 20px">
+                <p>Size:</p>
+                <p>{{details.size}}</p>
+              </div>
+            </mat-list-item>
+            <mat-list-item>
+              <mat-divider></mat-divider>
+              <div style="width: 100%; display: flex; flex-direction: row; justify-content: space-between; padding-bottom: 20px">
+                <p>Type:</p>
+                <p>{{details.type}}</p>
+              </div>
+            </mat-list-item>
+            <mat-list-item>
+              <mat-divider></mat-divider>
+              <div style="width: 100%; display: flex; flex-direction: row; justify-content: space-between; padding-bottom: 20px">
+                <p>Sub Type:</p>
+                <p>{{details.subtype}}</p>
+              </div>
+            </mat-list-item>
+            <mat-list-item>
+              <mat-divider></mat-divider>
+              <div style="width: 100%; display: flex; flex-direction: row; justify-content: space-between; padding-bottom: 20px">
+                <p>Languages:</p>
+                <p>{{details.languages}}</p>
+              </div>
+            </mat-list-item>
+            <mat-list-item>
+              <mat-divider></mat-divider>
+              <div style="width: 100%; display: flex; flex-direction: row; justify-content: space-between; padding-bottom: 20px">
+                <p>Alignment:</p>
+                <p>{{details.alignment}}</p>
+              </div>
+            </mat-list-item>
+            <mat-list-item>
+              <mat-divider></mat-divider>
+              <div style="width: 100%; display: flex; flex-direction: row; justify-content: space-between; padding-bottom: 20px">
+                <p>Armour Class (AC):</p>
+                <p>{{details.armor_class}}</p>
+              </div>
+            </mat-list-item>
+            <mat-list-item>
+              <mat-divider></mat-divider>
+              <div style="width: 100%; display: flex; flex-direction: row; justify-content: space-between; padding-bottom: 20px">
+                <p>Hit Points (HP):</p>
+                <p>{{details.hit_points}}</p>
+              </div>
+            </mat-list-item>
+            <mat-list-item>
+              <mat-divider></mat-divider>
+              <div style="width: 100%; display: flex; flex-direction: row; justify-content: space-between; padding-bottom: 20px">
+                <p>XP:</p>
+                <p>{{details.xp}}</p>
+              </div>
+            </mat-list-item>
+            <mat-list-item>
+              <mat-divider></mat-divider>
+              <div style="width: 100%; display: flex; flex-direction: row; justify-content: space-between; padding-bottom: 20px">
+                <p>Hit Dice:</p>
+                <p>{{details.hit_dice}}</p>
+              </div>
+            </mat-list-item>
+            <mat-list-item>
+              <mat-divider></mat-divider>
+              <div style="width: 100%; display: flex; flex-direction: row; justify-content: space-between; padding-bottom: 20px">
+                <p>Walking Speed:</p>
+                <p>{{details.speed.walk}}</p>
+              </div>
+            </mat-list-item>
+            <mat-list-item>
+              <mat-divider></mat-divider>
+              <div style="width: 100%; display: flex; flex-direction: row; justify-content: space-between; padding-bottom: 20px">
+                <p>Swimming Speed:</p>
+                <p>{{details.speed.swim}}</p>
+              </div>
+            </mat-list-item>
+            <mat-list-item>
+              <mat-divider></mat-divider>
+              <p>Stats:</p>
+              <mat-divider></mat-divider>
+              <div style="width: 100%; display: flex; flex-direction: row; justify-content: space-between; padding-bottom: 20px">
+                <p>Strength:</p>
+                <p>{{details.strength}}</p>
+              </div>
+              <mat-divider></mat-divider>
+              <div style="width: 100%; display: flex; flex-direction: row; justify-content: space-between; padding-bottom: 20px">
+                <p>Dexterity:</p>
+                <p>{{details.dexterity}}</p>
+              </div>
+              <mat-divider></mat-divider>
+              <div style="width: 100%; display: flex; flex-direction: row; justify-content: space-between; padding-bottom: 20px">
+                <p>Constitution:</p>
+                <p>{{details.constitution}}</p>
+              </div>
+              <mat-divider></mat-divider>
+              <div style="width: 100%; display: flex; flex-direction: row; justify-content: space-between; padding-bottom: 20px">
+                <p>Intelligence:</p>
+                <p>{{details.intelligence}}</p>
+              </div>
+              <mat-divider></mat-divider>
+              <div style="width: 100%; display: flex; flex-direction: row; justify-content: space-between; padding-bottom: 20px">
+                <p>Wisdom:</p>
+                <p>{{details.wisdom}}</p>
+              </div>
+              <mat-divider></mat-divider>
+              <div style="width: 100%; display: flex; flex-direction: row; justify-content: space-between; padding-bottom: 20px">
+                <p>Charisma:</p>
+                <p>{{details.charisma}}</p>
+              </div>
+            </mat-list-item>
+            <mat-list-item>
+              <mat-divider></mat-divider>
+              <div style="width: 100%; display: flex; flex-direction: row; justify-content: space-between; padding-bottom: 20px">
+                <p>Challenge Rating:</p>
+                <p>{{details.challenge_rating}}</p>
+              </div>
+            </mat-list-item>
+          </mat-list>
+        </mat-expansion-panel>
+
+        <mat-expansion-panel>
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              Proficiencies
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+          <mat-list>
+            <mat-list-item *ngFor="let proficiency of details.proficiencies">
+              <mat-divider></mat-divider>
+              <div style="width: 100%; display: flex; flex-direction: row; justify-content: space-between; padding-bottom: 20px">
+                <p>{{proficiency.proficiency.name}}:</p>
+                <p>{{proficiency.value}}</p>
+              </div>
+            </mat-list-item>
+          </mat-list>
+        </mat-expansion-panel>
+
+        <mat-expansion-panel *ngIf="details.damage_vulnerabilities.length > 0 || details.damage_resistances.length > 0 || details.damage_immunities.length > 0">
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              Damage
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+          <mat-list>
+            <mat-accordion multi>
+              <mat-expansion-panel *ngIf="details.damage_vulnerabilities.length > 0">
+                <mat-expansion-panel-header>
+                  <mat-panel-title>
+                    Damage Vulnerabilities
+                  </mat-panel-title>
+                </mat-expansion-panel-header>
+                <mat-list>
+                  <mat-list-item *ngFor="let damageVulnerability of details.damage_vulnerabilities">
+                    <p>{{damageVulnerability | json}}</p>
+                  </mat-list-item>
+                </mat-list>
+              </mat-expansion-panel>
+              <mat-expansion-panel *ngIf="details.damage_resistances.length > 0">
+                <mat-expansion-panel-header>
+                  <mat-panel-title>
+                    Damage Resistances
+                  </mat-panel-title>
+                </mat-expansion-panel-header>
+                <mat-list>
+                  <mat-list-item *ngFor="let damageResistance of details.damage_resistances">
+                    <p>{{damageResistance | json}}</p>
+                  </mat-list-item>
+                </mat-list>
+              </mat-expansion-panel>
+              <mat-expansion-panel>
+                <mat-expansion-panel-header *ngIf="details.damage_immunities.length > 0">
+                  <mat-panel-title>
+                    Damage Immunities
+                  </mat-panel-title>
+                </mat-expansion-panel-header>
+                <mat-list>
+                  <mat-list-item *ngFor="let damageImmunity of details.damage_immunities">
+                    <p>{{damageImmunity | json}}</p>
+                  </mat-list-item>
+                </mat-list>
+              </mat-expansion-panel>
+            </mat-accordion>
+          </mat-list>
+        </mat-expansion-panel>
+
+        <mat-expansion-panel>
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              Special Abilities
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+          <mat-list>
+            <div class="list-item-vertical-content" *ngFor="let specialAbility of details.special_abilities">
+              <mat-divider></mat-divider>
+              <p>{{specialAbility.name}}</p>
+              <p *ngIf="specialAbility.dc">{{specialAbility.dc.dc_type.name}}: {{specialAbility.dc.dc_value}} - Success type: {{specialAbility.dc.success_type}}</p>
+              <p>{{specialAbility.desc}}</p>
+            </div>
+          </mat-list>
+        </mat-expansion-panel>
+
+        <mat-expansion-panel>
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              Actions
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+          <mat-list>
+            <div class="list-item-vertical-content" *ngFor="let action of details.actions">
+              <mat-divider></mat-divider>
+              <p>{{action.name}}</p>
+              <p *ngIf="action.usage">{{action.usage.times}} {{action.usage.type}}</p>
+              <p *ngIf="action.attack_bonus">Attack bonus: {{action.attack_bonus}}</p>
+              <p *ngIf="action.dc">{{action.dc.dc_type.name}}: {{action.dc.dc_value}} - Success type: {{action.dc.success_type}}</p>
+              <p>{{action.desc}}</p>
+              <mat-accordion multi *ngIf="(action.options && action.options.from.length > 0) || (action.damage && action.damage.length > 0)">
+                <mat-expansion-panel *ngIf="action.options">
+                  <mat-expansion-panel-header>
+                    <mat-panel-title>
+                      Options
+                    </mat-panel-title>
+                  </mat-expansion-panel-header>
+                  <mat-list>
+                    <div class="list-item-vertical-content">
+                      <p >Has the choice of {{action.options.choose}} of the following:</p>
+                      <div class="list-item-vertical-content" *ngFor="let possibleOptions of action.options.from">
+                        <p *ngFor="let val of possibleOptions">{{val.count}} x {{val.name}} ({{val.type}})</p>
+                      </div>
+                    </div>
+                  </mat-list>
+                </mat-expansion-panel>
+                <mat-expansion-panel *ngIf="action.damage && action.damage.length > 0">
+                  <mat-expansion-panel-header>
+                    <mat-panel-title>
+                      Damage
+                    </mat-panel-title>
+                  </mat-expansion-panel-header>
+                  <mat-list>
+                    <mat-list-item *ngFor="let damage of action.damage">
+                      <p>{{damage.damage_type.name}}: {{damage.damage_dice}}</p>
+                    </mat-list-item>
+                  </mat-list>
+                </mat-expansion-panel>
+              </mat-accordion>
+            </div>
+          </mat-list>
+        </mat-expansion-panel>
+
+        <mat-expansion-panel>
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              Legendary Actions
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+          <mat-list>
+            <div class="list-item-vertical-content" *ngFor="let action of details.legendary_actions">
+              <mat-divider></mat-divider>
+              <p>{{action.name}}</p>
+              <p>{{action.desc}}</p>
+              <p *ngIf="action.attack_bonus">Attack bonus: {{action.attack_bonus}}</p>
+              <mat-accordion multi *ngIf="action.damage && action.damage.length">
+                <mat-expansion-panel>
+                  <mat-expansion-panel-header>
+                    <mat-panel-title>
+                      Damage
+                    </mat-panel-title>
+                  </mat-expansion-panel-header>
+                  <mat-list>
+                    <mat-list-item *ngFor="let damage of action.damage">
+                      <p>{{damage.damage_type.name}}: {{damage.damage_dice}}</p>
+                    </mat-list-item>
+                  </mat-list>
+                </mat-expansion-panel>
+              </mat-accordion>
+            </div>
+          </mat-list>
+        </mat-expansion-panel>
+      </mat-accordion>
+    </app-skeleton>
+  </div>
+</div>
+
+

@@ -1,0 +1,17 @@
+.list-item-vertical-content {
+  display: flex;
+  flex-direction: column !important;
+}
+
+.inner-list {
+  margin-left: 1em;
+  margin-right: 1em;
+}
+
+.mat-accordion {
+  padding-bottom: 20px !important;
+}
+
+.mat-divider {
+  padding-bottom: 20px !important;
+}

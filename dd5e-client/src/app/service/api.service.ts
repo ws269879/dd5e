@@ -110,6 +110,15 @@ export class ApiService {
     }
   }
 
+  async getMonsterDetails(monster: string) {
+    try {
+      const url = `${this.baseUrl}/monsters/${monster}`
+      return await this._http.get<IMonsterDetails>(url).toPromise()
+    } catch (e) {
+      return null
+    }
+  }
+
   async getRaces() {
     try {
       const url = `${this.baseUrl}/races`
@@ -273,4 +282,127 @@ export interface IMagicSchoolDetails {
   url: string;
   index: string;
   desc: string;
+}
+
+export interface IMonsterDetails {
+  index: string;
+  name: string;
+  size: string;
+  type: string;
+  subtype: string | null;
+  alignment: string;
+  armor_class: number;
+  hit_points: number;
+  hit_dice: string;
+  speed: {
+    walk: string;
+    swim: string;
+  };
+  strength: number;
+  dexterity: number;
+  constitution: number;
+  intelligence: number;
+  wisdom: number;
+  charisma: number;
+  proficiencies: {
+    proficiency: {
+      index: string;
+      name: string;
+      url: string;
+    }
+    value: number
+  }[]
+  damage_vulnerabilities: any[];
+  damage_resistances: any[];
+  damage_immunities: any[];
+  condition_immunities: any[];
+  senses: {
+    darkvision: string;
+    passive_perception: number;
+  };
+  languages: string;
+  challenge_rating: number;
+  xp: number;
+  special_abilities:  {
+    name: string;
+    desc: string;
+    dc?:{
+      dc_type:{
+        index: string;
+        name: string;
+        url: string;
+      };
+      dc_value: number;
+      success_type: string;
+    }
+  }[];
+  actions: {
+    name: string;
+    desc: string;
+    usage?: {
+      type: string;
+      times: number;
+    };
+    attack_bonus?: number;
+    damage?: {
+      damage_type: {
+        index: string;
+        name: string;
+        url: string;
+      };
+      damage_dice: string;
+    }[];
+    dc?: {
+      dc_type:{
+        index: string;
+        name: string;
+        url: string;
+      };
+      dc_value: number;
+      success_type: string;
+    };
+    options?: {
+      choose: number;
+      from: {
+        name: string;
+        count: number;
+        type: string;
+      }[][];
+    };
+  }[];
+  legendary_actions: {
+    name: string;
+    desc: string;
+    usage?: {
+      type: string;
+      times: number;
+    };
+    attack_bonus?: number;
+    damage?: {
+      damage_type: {
+        index: string;
+        name: string;
+        url: string;
+      };
+      damage_dice: string;
+    }[];
+    dc?: {
+      dc_type:{
+        index: string;
+        name: string;
+        url: string;
+      };
+      dc_value: number;
+      success_type: string;
+    };
+    options?: {
+      choose: number;
+      from: {
+        name: string;
+        count: number;
+        type: string;
+      }[][];
+    };
+  }[];
+  url: string;
 }

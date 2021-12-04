@@ -24,7 +24,8 @@ import {MatExpansionModule} from '@angular/material/expansion'
 import {MatListModule} from '@angular/material/list';
 import { FeatsDetailsComponent } from './feats/details/details.component';
 import { LanguagesDetailsComponent } from './languages/details/details.component';
-import { MagicSchoolDetailsComponent } from './magic-schools/details/magic-school-details.component'
+import { MagicSchoolDetailsComponent } from './magic-schools/details/magic-school-details.component';
+import { MonstersDetailsComponent } from './monsters/details/details.component'
 
 @NgModule({
   declarations: [
@@ -43,7 +44,8 @@ import { MagicSchoolDetailsComponent } from './magic-schools/details/magic-schoo
     ClassesDetailsComponent,
     FeatsDetailsComponent,
     LanguagesDetailsComponent,
-    MagicSchoolDetailsComponent
+    MagicSchoolDetailsComponent,
+    MonstersDetailsComponent
   ],
   imports: [
     CommonModule,
