@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import {Observable, ReplaySubject} from 'rxjs'
+import {from, Observable, ReplaySubject, switchMap, take} from 'rxjs'
 import {HttpClient, HttpErrorResponse, HttpHeaders, HttpResponse} from '@angular/common/http'
 
 @Injectable({
@@ -9,7 +9,7 @@ export class LoginService {
 
   public userDetails$: Observable<IUserDetails | null>
   public loggedIn: boolean = false
-  private baseUrl = 'http://localhost:8080'
+  private baseUrl = 'http://192.168.64.2'
   private _userDetailsSubject: ReplaySubject<IUserDetails | null> = new ReplaySubject(1)
   private _userDetails?: IUserDetails
 
@@ -22,7 +22,14 @@ export class LoginService {
   }
 
 
-  getUserDetails(): Observable<IUserDetails | null> {
+  getUserDetails(lazyFetch = false): Observable<IUserDetails | null> {
+    if (lazyFetch && !this._userDetails) {
+      return from(this.fetchUserDetails())
+        .pipe(switchMap((_) => this._userDetailsSubject.asObservable()))
+    }
+    this._userDetailsSubject.asObservable().pipe(take(1)).toPromise().then((val) => {
+      console.log(val)
+    })
     return this._userDetailsSubject.asObservable()
   }
 
@@ -77,8 +84,10 @@ export class LoginService {
         this._userDetailsSubject.next(this._userDetails)
         return this._userDetails
       }
+      this._userDetailsSubject.next(null)
       return null
     } catch (e) {
+      this._userDetailsSubject.next(null)
       return null
     }
   }

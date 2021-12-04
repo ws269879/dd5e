@@ -1,0 +1,77 @@
+
+@charset "UTF-8";
+
+//Susy grid
+@import "susy";
+
+// Configuration and helpers
+@import
+'helpers/variables',
+'helpers/functions',
+'helpers/mixins',
+'helpers/states',
+'helpers/utilities';
+
+// Vendors
+@import
+'vendors/normalize',
+'vendors/slick-slider';
+
+// Base
+@import
+'base/fonts',
+'base/animations',
+'base/reset',
+'base/typography';
+
+// Layout-related sections
+@import
+'layout/header',
+'layout/footer',
+'layout/grid',
+'layout/navigation-mobile',
+'layout/navigation-primary',
+'layout/navigation-user',
+'layout/chart',
+'layout/body',
+'layout/reference',
+'layout/flex',
+'layout/login';
+
+// Components
+@import
+'components/attendance-grid',
+'components/breadcrumb',
+'components/button',
+'components/child-list',
+'components/course-data',
+'components/graph',
+'components/icon',
+'components/interventions',
+'components/input',
+'components/loader',
+'components/lists',
+'components/modal',
+'components/module-summary',
+'components/page-content',
+'components/page-header',
+'components/page-wrapper',
+'components/stat-capsule',
+'components/table',
+'components/tab-panel',
+'components/attend',
+'components/geo-circle',
+'components/studygoal-configuration',
+'components/tlc-rating',
+'components/studygoal-configuration';
+
+
+// Material
+@import 'material/jisc-theme';
+
+html, body { height: 100%; }
+body { margin: 0; }
+
+.mat-tooltip {
+  font-size: medium !important;
+}

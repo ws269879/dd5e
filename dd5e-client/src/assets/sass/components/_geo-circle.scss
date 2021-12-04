@@ -1,0 +1,164 @@
+$geo-circle-border-color: #bebebe;
+$ring-color-1: #f0f7f7;
+$ring-color-2: #e6f3f3;
+$ring-color-3: #d5ebff;
+$label-color: #3c3c3c;
+
+@mixin abs-position-centre() {
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+}
+
+@mixin geo-circle-border($width) {
+  border: $width solid $geo-circle-border-color;
+}
+
+.geo-circle-wrap{
+  @include span(12);
+
+  @include respond-to(desktop){
+    @include span(8);
+  }
+}
+
+.geo-circle{
+  @include geo-circle-border(2px);
+  background-color: $ring-color-1;
+  width: 80vh;
+  height: 80vh;
+  display: block;
+  border-radius: 50%;
+  margin: 25px auto 35px;
+  position: relative;
+  max-height: 600px;
+  max-width: 600px;
+
+  &:before{
+    @include geo-circle-border(2px);
+    @include abs-position-centre();
+    background-color: $ring-color-3;
+    width: 50%;
+    height: 50%;
+    display: block;
+    border-radius: 50%;
+    content: '';
+    top: 25%;
+  }
+
+  &:after{
+    @include geo-circle-border(2px);
+    @include abs-position-centre();
+    background-color: #fff;
+    width: 25%;
+    height: 25%;
+    display: block;
+    border-radius: 50%;
+    content: '';
+    top: 37.5%;
+  }
+}
+
+.geo-circle__label{
+  @include abs-position-centre();
+  top: calc(50% - 4.5vh);
+  text-align: center;
+  font-size: 14px;
+}
+
+.geo-circle__label--100{
+ margin-top: -12.5%;
+}
+
+.geo-circle__label--200{
+  margin-top: -25%;
+}
+
+.geo-circle__label--300{
+  margin-top: -37.5%;
+}
+
+.geo-circle__label--400{
+  margin-top: -50%;
+}
+
+.geo-circle__inner-ring{
+  @include geo-circle-border(2px);
+  background-color: $ring-color-2;
+  width: 75%;
+  height: 75%;
+  display: block;
+  border-radius: 50%;
+  margin: 12.5% auto;
+}
+
+.geo-circle__check-ins{
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 999;
+}
+
+.check-in{
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  position: absolute;
+  pointer-events: none;
+
+  &:focus, &:hover {
+    z-index: 5;
+
+    .check-in__circle {
+      display: block;
+    }
+  }
+}
+
+.check-in__circle{
+  @include abs-position-centre();
+  display: block;
+  height: 5%;
+  width: 5%;
+  border-radius: 50%;
+  top: calc(50% - 2.5%);
+  z-index: 10;
+  pointer-events: all;
+  cursor: pointer;
+}
+
+.geo-key{
+  @include geo-circle-border(1px);
+  position: relative;
+  padding: 15px;
+  float: right;
+  @include span(12);
+
+  @include respond-to(desktop){
+    @include span(4);
+    margin-right: 0;
+  }
+}
+
+.geo-key__item{
+  display: block;
+  position: relative;
+
+  &:not(:last-of-type){
+    margin: 0 0 10px;
+  }
+}
+
+.geo-key__circle{
+  width: 20px;
+  height: 20px;
+  position: relative;
+  display: inline-block;
+  margin-right: 10px;
+  vertical-align: middle;
+}

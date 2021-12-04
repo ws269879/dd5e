@@ -1,0 +1,43 @@
+.site-nav {
+  background-color: $strong-grey;
+  padding-top: 45px;
+  padding-bottom: 45px;
+}
+
+.primary-nav__container {
+  @extend .u-list-reset;
+}
+
+.primary-nav__item--child.primary-nav__item--child{
+  margin-bottom: 5px;
+}
+
+.primary-nav__item.active .primary-nav__link:after {
+  background-image: url("../../img/arrow-black.svg") !important
+}
+
+.primary-nav__link, .primary-nav__parent{
+  padding: 13px 15px 10px;
+  display: block;
+  min-height: 50px;
+  color: #fff;
+}
+
+.primary-nav__parent{
+  padding-left: 0;
+  color: #fff;
+}
+
+.primary-nav__link--child{
+  background-color: rgba(#fff, 0.1);
+
+  &:hover{
+    background-color: #fff;
+    color: #000;
+  }
+}
+
+.primary-nav__icon{
+  color: $dark-grey;
+  margin-right: 10px;
+}

@@ -1,1 +1,25 @@
-<p>dashboard works!</p>
+<header class="page-header">
+  <div class="o-grid">
+    <div class="page-header__title">
+      <h1>Dashboard</h1>
+    </div>
+  </div>
+</header>
+
+<div class="page-content">
+  <div class="o-grid">
+
+    <div class="card-grid">
+
+      <app-card *ngFor="let card of cardsService.getCards()"
+                [title]="card.title"
+                [content]="card.content"
+                [links]="card.links"
+                [image]="card.image"
+      ></app-card>
+
+    </div>
+
+  </div>
+
+</div>

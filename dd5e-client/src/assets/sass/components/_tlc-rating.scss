@@ -1,0 +1,135 @@
+.tlc-rating{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex-grow: 1;
+  padding: 0;
+  margin: 15px 0 0;
+}
+
+.tlc-rating__item.tlc-rating__item{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.stat-capsule__item--tlc.stat-capsule__item--tlc{
+  padding-bottom: 18px;
+}
+
+.tlc-rating__bar{
+  display: block;
+  height: 23px;
+}
+
+.tlc-rating__text{
+  width: 30%;
+  font-weight: bold;
+}
+
+.tlc-rating__value{
+  width: 30%;
+}
+
+.tlc-rating__bar--red{
+  background-color: #c85050;
+}
+.tlc-rating__bar--amber{
+  background-color: #e4c05d;
+}
+.tlc-rating__bar--green{
+  background-color: #87c573;
+}
+.tlc-rating__bar--grey{
+  background-color: #1e243f;
+}
+
+.tlc-results{
+  h3.tlc-results__heading{
+    text-align: left !important;
+    position: relative;
+    padding-right: 40px;
+
+    .traffic-lights__indicator{
+      position: absolute;
+      top: -2px;
+      right: 0;
+
+      &:after{
+        height: 31px;
+        width: 31px;
+      }
+    }
+  }
+}
+
+.tlc-results__item{
+  padding: 5px 30px 10px;
+
+  @include respond-to(tablets-and-smaller){
+    border-bottom: 1px solid $medium-grey;
+  }
+
+  @include respond-to(desktop){
+      border-right: 1px solid $medium-grey;
+  }
+
+  &:last-of-type{
+    border: 0;
+  }
+}
+
+.tlc-results__trigger{
+  font-weight: 100;
+  min-height: 55px;
+}
+
+.tlc-config__panel{
+  border: 1px solid $light-blue;
+  padding: 35px;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 45px;
+}
+
+.tlc-student-rating{
+  max-width: 300px;
+}
+
+.tlc-student-list {
+  display: inline-block;
+  position: relative;
+  margin-bottom: 1.3em;
+  &:after {
+    display: inline-block;
+    content: '';
+    width: 20px;
+    height: 20px;
+    background-image: url("../../img/icon-rag-grey.svg");
+    margin-left: 7px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    position: absolute;
+    left: 30px
+  }
+}
+
+.tlc-student-list--red {
+  &:after {
+    background-image: url("../../img/icon-rag-red.svg");
+  }
+}
+
+.tlc-student-list--amber{
+  &:after {
+    background-image: url("../../img/icon-rag-amber.svg");
+  }
+}
+
+.tlc-student-list--green{
+  &:after {
+    background-image: url("../../img/icon-rag-green.svg");
+  }
+}

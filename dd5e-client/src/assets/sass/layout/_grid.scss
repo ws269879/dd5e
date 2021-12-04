@@ -1,0 +1,109 @@
+
+/* =====================
+.o-grid
+====================== */
+.o-grid {
+  @include container;
+  width: $container-width;
+}
+
+/* =====================
+.o-2up
+====================== */
+.o-2up {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.o-2up__item {
+  width: 100%;
+
+  @include respond-to(desktop){
+    @include span(6);
+
+    &:nth-of-type(2n){
+      margin-right: 0;
+    }
+  }
+}
+
+/* =====================
+.o-3up
+====================== */
+.o-3up {
+  display: flex;
+  width: 100%;
+  flex-wrap: wrap;
+}
+
+.o-3up__item {
+  @include span(12);
+
+  @include respond-to(desktop){
+    @include span(4);
+
+    &:nth-of-type(3n){
+      margin-right: 0;
+    }
+  }
+}
+
+/* =====================
+.o-4up
+====================== */
+.o-4up{
+  display: flex;
+  justify-content: flex-start;
+  width: 100%;
+  flex-wrap: wrap;
+}
+
+.o-4up__item{
+  @include span(12);
+
+  @include respond-to(tablets){
+    @include span(6);
+
+    &:nth-of-type(2n){
+      margin-right: 0;
+    }
+  }
+
+  @include respond-to(desktop){
+    @include span(3);
+
+    &:nth-of-type(4n){
+      margin-right: 0;
+    }
+  }
+}
+
+/* =====================
+.o-6up
+====================== */
+.o-6up{
+  display: flex;
+  justify-content: flex-start;
+  width: 100%;
+  flex-wrap: wrap;
+}
+
+.o-6up__item{
+  @include span(12);
+
+  @include respond-to(tablets){
+    @include span(4);
+
+    &:nth-of-type(3n){
+      margin-right: 0;
+    }
+  }
+
+  @include respond-to(desktop){
+    @include span(2);
+
+    &:nth-of-type(6n){
+      margin-right: 0;
+    }
+  }
+}

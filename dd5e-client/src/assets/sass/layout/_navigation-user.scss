@@ -1,0 +1,45 @@
+.account-nav{
+  float: right;
+}
+
+.account-nav__container{
+  @extend .u-list-reset;
+
+  display: flex;
+  align-items: center;
+  height: 52px;
+  margin-top: 3px;
+}
+
+.account-nav__item{
+  display: flex;
+  height: 100%;
+
+  &:not(:last-of-type){
+    margin-right: 40px;
+  }
+}
+
+.account-nav__link{
+  height: 100%;
+  align-items: center;
+  display: flex;
+  background: none;
+  border: 0;
+  cursor: pointer;
+  outline: none;
+  padding-left: 0;
+
+  &:not(:hover){
+    color: $white;
+  }
+
+  &:hover{
+    color: $dark-grey;
+  }
+
+  .icon{
+    margin-bottom: 4px;
+    margin-left: 10px;
+  }
+}

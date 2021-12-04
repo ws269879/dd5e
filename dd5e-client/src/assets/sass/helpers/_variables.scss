@@ -1,0 +1,54 @@
+$jisc-orange: #e85e13;
+$jisc-dark-orange: #9f3515;
+$jisc-pink: #e61554;
+$jisc-yellow: #f9b000;
+$jisc-lime: #b2bb1c;
+$jisc-blue: #0092cb;
+$jisc-violet: #b71a8b;
+$jisc-maroon: #820036;
+$jisc-olive: #8a7300;
+$jisc-green: #458525;
+$jisc-purple: #552481;
+$jisc-footer: #4c4c4c;
+
+$white: #ffffff;
+$feint-grey: #f5f6f7;
+$light-grey: #fafafa;
+$medium-grey: #9ba7b0;
+$strong-grey: #525e67;
+$dark-grey: #2c3841;
+$dark-grey-highlight: #616a71;
+
+
+$light-blue: #b9c9d5;
+$blue: #00557f;
+
+$rag-green: #458525;
+$rag-amber: #f9b000;
+$rag-red: #e61554;
+$rag-grey: $strong-grey;
+
+$disabled-input: #f9f9f9;
+
+$screen-mobile: 520px;
+$screen-tablet: 620px;
+$screen-desktop: 960px;
+$screen-desktop-large: 1650px;
+
+$base-font-size: 18px;
+
+$header-nav-height: 60px;
+$primary-nav-height: 90px;
+
+$header-height: $header-nav-height + $primary-nav-height;
+$header-height-mobile: 60px;
+
+$susy: (
+  columns: 12,
+  container: 1650px,
+  gutters: 23px/76px
+);
+
+$container-width: 95%;
+
+$font-family: "Roboto", HelveticaNeue-Light, "Helvetica Neue Light", "Helvetica Neue", Arial, sans-serif;

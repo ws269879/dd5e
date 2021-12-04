@@ -12,8 +12,7 @@ export class SessionGuard implements CanActivate {
               private _loginService: LoginService) { }
 
   async canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot) {
-    const userDetails = await this._loginService.fetchUserDetails()
-    console.log(userDetails)
+    const userDetails = await this._loginService.getUserDetails(true).pipe(take(1)).toPromise()
     if (userDetails) {
       return true
     } else {

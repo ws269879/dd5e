@@ -1,0 +1,58 @@
+.page-content--hero--inner {
+  display: flex;
+
+  @include respond-to(desktop) {
+    height: calc(100vh - (322px + 64px)); // viewport size minus height of footer and header
+  }
+
+  @include respond-to(tablets-and-smaller) {
+    height: calc(100vh - (194px + 64px)); // viewport size minus height of condensed footer and header
+  }
+}
+
+.page-content--image {
+  img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+  }
+  flex: 1;
+}
+
+.page-content--main-inner {
+  width: 100%;
+  padding: 50px;
+  mat-form-field {
+    width: 100%;
+  }
+}
+
+.page-content--main {
+  flex: 1;
+  align-items: center;
+  display: flex;
+  background: white;
+  justify-content: center;
+
+  .input {
+    max-width: 100%;
+    display: block;
+    margin: 1em 0;
+  }
+
+  select {
+    display: block;
+  }
+
+  button {
+    display: block;
+    margin: 0 auto;
+  }
+
+  @include respond-to(handhelds){
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+}

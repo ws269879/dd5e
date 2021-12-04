@@ -1,0 +1,247 @@
+.page-content.page-content:not(.page-content--additional, .page-content--hero){
+  padding-top: 5px;
+  padding-bottom: 45px;
+
+  .o-grid{
+    padding-top: 35px;
+  }
+}
+
+.page-content--additional{
+  padding-top: 35px;
+  padding-bottom: 35px;
+}
+
+.page-content__container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap
+}
+
+.page-content__container--margins {
+  margin-left: -8px;
+  margin-right: -8px
+}
+
+@media (min-width: 1600px) {
+  .page-content__container--margins {
+    margin-left: -16px;
+    margin-right: -16px
+  }
+}
+
+.page-content--full {
+  padding: 0;
+}
+
+@media (min-width: 1025px) {
+  .page-content--full {
+    padding: 0
+  }
+}
+
+
+.template-homepage .page-content {
+  padding-top: 112px
+}
+
+@media (min-width: 1025px) {
+  .template-homepage .page-content {
+    padding-top: 144px
+  }
+}
+
+//Temporary until containers are replaced across site
+.page-content.container{
+  position: relative;
+
+  &:after {
+    display: block;
+    background: $feint-grey;
+    width: 200vw;
+    top: 0;
+    left: -150vh;
+    content: '';
+    position: absolute;
+    height: 100%;
+    z-index: -1;
+  }
+
+  @include respond-to(handhelds){
+    &:after {
+      left: -5%;
+    }
+  }
+}
+
+.page-content__tabbed {
+  min-height: 250px;
+  border: 1px solid $light-blue;
+  margin-top: -1px;
+  padding: 30px 35px;
+}
+
+.page-content__tabbed--wide{
+  padding: 0;
+}
+
+.page-content__tabbed__heading{
+  margin-bottom: 15px;
+}
+
+.page-content__tabbed__heading--large{
+  margin-bottom: 30px;
+}
+
+.page-content--hero.page-content--hero{
+  padding-top: 0;
+  border: 0;
+
+  @include respond-to(tablets-and-smaller) {
+    background-color: $white;
+  }
+
+  .o-grid:first-of-type{
+    padding: 0;
+    width: 100%;
+    display: flex;
+
+    @include respond-to(tablets-and-smaller){
+      display: block;
+    }
+  }
+}
+
+.page-content__view-options{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.page-content__panel{
+  padding: 30px 30px 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  @include respond-to(tablets-and-smaller){
+    &:not(:last-of-type){
+      margin-bottom: 25px;
+    }
+  }
+}
+
+.page-content__panel__footer{
+  flex-grow: 1;
+  justify-content: flex-end;
+  display: flex;
+  flex-direction: column;
+}
+
+.page-content__panel__footer__btn{
+  margin-right: auto;
+  margin-bottom: 0;
+  height: auto;
+}
+
+.page-content__panel--bordered{
+  border: 1px solid $light-blue;
+}
+
+.page-content__panel--grey{
+  background-color: $light-grey;
+}
+
+.page-content__student-list{
+  border-top: 1px solid $light-blue;
+  padding-top: 25px;
+}
+
+.page-content__w100 {
+  width: 100%;
+  float: left;
+  padding-top: 1em;
+}
+
+.page-content__w100_nopad {
+  width: 100%;
+  float: left;
+  padding-top: 0em;
+}
+
+.page-content__block {
+  width: 100%;
+  float: left;
+  padding-top: 1.5em;
+  margin-bottom: 1.5em;
+  border-top: 0.5px solid #b9c9d5;
+  &.page-content__block:first-child {
+    padding-top: 0em;
+    border-top: none;
+  }
+}
+
+.page-content__table {
+  width: 100% !important;
+  float: left;
+  border-left: 0.5px solid #b9c9d5;
+  border-right: 0.5px solid #b9c9d5;
+  margin-bottom: 2em;
+}
+
+.page-content__table table {
+  float: left;
+  margin: 0px !important;
+}
+
+.page-content__controls {
+  width: 100%;
+  float: left;
+  padding-top: 1.5em;
+  margin-bottom: 2em;
+  border-top: 0.5px solid #b9c9d5;
+}
+
+.page-content__float-left {
+  width: 100% !important;
+  float: left;
+}
+
+.page-content__block h4 {
+  margin-bottom: 0em;
+}
+
+.page-content__column_panel {
+  width: 100%;
+  height: auto;
+  float: left;
+  padding: 0em 1em 0em 1em;
+}
+
+.page-content__split_column_1 {
+  width: calc(50% - 0.5em);
+  float: left;
+  margin-right: 0.5em;
+}
+
+.page-content__split_column_2 {
+  width: calc(50% - 0.5em);
+  float: left;
+  margin-left: 0.5em;
+}
+
+.page-content__column_divider {
+  width: 100%;
+  float: left;
+  border: none !important;
+  height: 0.5px !important;
+  margin-top: 1em;
+  margin-bottom: 1em;
+  background-color: #b9c9d5;
+  position: relative;
+}
+
+.page-content__label {
+  margin-bottom: 0.25em;
+}

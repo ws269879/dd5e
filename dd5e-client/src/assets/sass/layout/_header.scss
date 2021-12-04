@@ -1,0 +1,56 @@
+/**
+ * Remove the margin in all browsers.
+ */
+.site-header{
+  width: 100%;
+}
+
+.site-header__container{
+  display: flex;
+  align-items: center;
+  position: relative;
+  z-index: 20;
+  background-color: $dark-grey;
+  height: $header-nav-height;
+}
+
+.site-header__icons{
+  float: right;
+  display: flex;
+  align-items: center;
+
+  @include respond-to(desktop){
+    display: none;
+  }
+}
+.site-header__icons__item{
+  display: inline-block;
+  height: 50px;
+  width: 50px;
+  text-align: right;
+  padding-right: 0;
+  margin-top: 5px;
+  color: #fff;
+  border: none;
+  background: none;
+  outline: none;
+}
+
+.app-title{
+  color: #fff;
+  margin: 17px 0 11px 65px;
+  float: left;
+}
+
+.logo{
+  text-indent: -2000px;
+  display: block;
+  width: 52px;
+  height: 30px;
+  position: absolute;
+  top: 0;
+
+  &:hover{
+    opacity: 0.8;
+  }
+}

@@ -1,0 +1,249 @@
+.module-summary{
+  margin-bottom: 20px;
+}
+
+.module-summary__item.module-summary__item{
+  border: 1px solid $light-blue;
+  margin-bottom: 20px;
+  padding: 25px 30px 15px;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.module-summary__item--pull.module-summary__item--pull{
+  justify-content: flex-start;
+}
+
+.module-summary___name{
+  float: left;
+  padding-top: 1em;
+  padding-bottom: 1em;
+}
+
+.module-summary__link{
+  min-height: auto;
+  margin-right: 0;
+  margin-bottom: 10px;
+  height: auto;
+  align-self: flex-start;
+}
+
+.module-summary__details{
+  border-top: 1px solid $light-blue;
+  padding-top: 15px;
+}
+
+.module-summary___details__item.module-summary___details__item{
+  margin-bottom: 10px;
+}
+
+.module-summary__details--padded{
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+
+.module-summary{
+  .module-summary__details--padded{
+    &:first-child{
+      padding-top: 0;
+      border-top: 0;
+    }
+
+    &:last-child{
+      padding-bottom: 0;
+    }
+  }
+}
+
+.module-summary__chart{
+  display: flex;
+  margin-bottom: 15px;
+}
+
+.module-summary__chart__desc{
+  align-self: center;
+  font-size: 16px;
+  margin-left: 15px;
+  color: $strong-grey;
+}
+
+.module-summary__lights{
+  border-top: 1px solid $light-blue;
+  padding-top: 15px;
+}
+
+.module-summary__lights__item.module-summary__lights__item{
+  margin-bottom: 10px;
+}
+
+.module-summary__stats{
+  justify-content: space-between;
+  flex-direction: row;
+  display: flex;
+}
+
+.traffic-lights__category{
+
+}
+
+.traffic-lights__indicator{
+  display: inline-block;
+
+  &:after{
+    display: inline-block;
+    content: '';
+    width: 20px;
+    height: 20px;
+    margin-left: 7px;
+    background-image: url("../../img/icon-rag-grey.svg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    vertical-align: middle;
+  }
+}
+
+.traffic-lights__indicator--red{
+  &:after {
+    background-image: url("../../img/icon-rag-red.svg");
+  }
+}
+
+.traffic-lights__indicator--amber{
+  &:after {
+    background-image: url("../../img/icon-rag-amber.svg");
+  }
+}
+
+.traffic-lights__indicator--green{
+  &:after {
+    background-image: url("../../img/icon-rag-green.svg");
+  }
+}
+
+.student-summary.student-summary,
+.tutor-summary.tutor-summary{
+  padding: 15px 30px;
+}
+
+.student-summary__name{
+  min-height: auto;
+  @include respond-to(desktop) {
+    width: 30%;
+  }
+}
+
+.student-summary__course{
+  @include respond-to(desktop) {
+    width: 30%;
+    text-align: center;
+    padding-top: 4px;
+  }
+}
+
+.student-summary__id{
+  @include respond-to(desktop) {
+    width: 30%;
+    text-align: center;
+    padding-top: 4px;
+  }
+}
+
+.student-summary__rag{
+  padding-top: 4px;
+  @extend .text--small;
+
+  &:before{
+    vertical-align: sub;
+  }
+  @include respond-to(desktop) {
+    width: 10%;
+    text-align: right;
+  }
+}
+
+.student-summary--grid.student-summary--grid {
+  margin-bottom: gutter();
+  border: 1px solid $light-blue;
+  padding: 30px;
+
+  .student-summary__name {
+    padding-left: 0;
+    display: inline-block;
+    width: auto;
+    height: auto;
+  }
+
+  .student-summary__course, .student-summary__id{
+    display: block;
+    width: auto;
+    text-align: left;
+    padding-right: 40px;
+    font-size: 16px;
+  }
+
+  .student-summary__rag{
+    margin-left: auto;
+    align-self: normal;
+    position: absolute;
+    top: calc(50% - 20px);
+    right: 25px;
+    width: auto;
+    font-size: 18px;
+    line-height: 1.5;
+
+    &:before{
+      width: 35px;
+      height: 35px;
+      margin: 0 7px 0 0;
+      vertical-align: middle;
+    }
+  }
+}
+
+.tutor-summary--grid.tutor-summary--grid {
+  margin-bottom: gutter();
+  border: 1px solid $light-blue;
+  padding: 30px;
+}
+
+.tutor-summary__links{
+  a{
+    float: left;
+    clear: both;
+    min-height: auto;
+  }
+}
+
+.tutor-summary--grid{
+  .tutor-summary__links {
+    border-top: 1px solid $light-blue;
+    margin-top: 15px;
+    padding-top: 15px;
+  }
+}
+
+.tutor-summary--list{
+  .tutor-summary__name{
+    padding-top: 4px;
+
+    @include respond-to(desktop){
+      @include span(4);
+    }
+  }
+
+  .tutor-summary__course{
+    padding-top: 4px;
+
+    @include respond-to(desktop){
+      @include span(5);
+    }
+  }
+
+  .tutor-summary__links{
+    @include respond-to(desktop){
+      @include span(3);
+    }
+  }
+}

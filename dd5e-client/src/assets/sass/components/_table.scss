@@ -1,0 +1,211 @@
+table{
+  border-collapse: collapse;
+  max-width: 100%;
+  width: 100%;
+  margin: 0 0 16px;
+}
+
+.table{
+  font-size: 1em;
+  text-align: left;
+
+  td, thead th {
+    padding: 1em;
+    vertical-align: middle;
+  }
+
+  tr{
+    background-color: $white;
+    transition: background-color .2s ease 0s;
+
+    &:not(first-of-type){
+      border-top: 1px solid $light-blue;
+    }
+
+    &:last-of-type{
+      border-bottom: 1px solid $light-blue;
+    }
+
+    &:hover{
+      background-color: $feint-grey;
+      color: $dark-grey;
+    }
+  }
+}
+
+.table--no-border-top{
+  thead{
+    tr{
+      border-top: 0;
+    }
+  }
+}
+
+.table--alternate-rows{
+  tr:nth-child(odd) {
+    background-color: $light-grey;
+  }
+}
+
+.table-progression{
+  margin-bottom: 3em;
+}
+
+.table-progression--last{
+  margin-bottom: 0;
+}
+
+.table-progression__caption{
+  margin-bottom: 1em;
+  font-size: 1em;
+}
+
+.table-progression__icon{
+  vertical-align: top;
+  height: 20px;
+  width: 20px;
+}
+
+thead{
+
+  th{
+    background-color: $white;
+    font-family: $font-family;
+    text-align: left;
+  }
+}
+
+.table-module.table-module{
+  margin-bottom: 4em;
+
+  td, th{
+    padding-left: 0px;
+  }
+
+  td:first-child{
+    padding-left: 35px;
+  }
+}
+
+@media only screen and (min-width: 700px) {
+  .table-module.table-module th:first-child {
+    padding-left: 35px;
+  }
+}
+
+.table-module__name.table-module__name{
+  width: 40%;
+}
+
+.table-module__vle, .table-module__marks, .table-module__att{
+  width: 14%;
+}
+
+.table-module__table-module__issues{
+  min-width: 155px;
+}
+
+.table-module__result{
+  width: 14%;
+}
+
+.table-module__issue, .table-module__rag{
+  width: 15%;
+}
+
+.table-module__trigger{
+  width: 45%;
+}
+
+.table-module__status{
+  width: 25%;
+}
+
+.table__content-wrap{
+  word-break: break-all;
+}
+
+.table-pagination{
+  display: flex;
+  justify-content: space-between;
+}
+
+.table-pagination__page{
+  align-self: center;
+}
+
+.table--full {
+  flex-basis: 100%;
+  max-width: 100%;
+  margin-bottom: 0
+}
+
+.table--full tr td:first-child,
+.table--full tr th:first-child {
+  padding-left: 5vw;
+}
+
+.table--full tr td:last-child,
+.table--full tr th:last-child {
+  padding-right: 5vw;
+}
+
+.table--full thead {
+  font-size: 15px;
+  text-align: left;
+}
+
+.table--full thead tr {
+  border-bottom: 0
+}
+
+@media only screen and (max-width: 700px) {
+  table {
+    font-size: 0.75em;
+  }
+  .table td,
+  .table thead th,
+  .table-module.table-module th {
+    padding: 0.5em;
+    padding-left: 0px;
+  }
+
+  .table-module.table-module th:first-child,
+  .table-module.table-module td:first-child {
+    padding-left: 0.5em;
+  }
+}
+
+.highcharts-data-table table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+  font-family: $font-family;
+  font-size: 0.9em;
+}
+.highcharts-data-table td, .highcharts-data-table th, .highcharts-data-table caption {
+  padding: 0.3em;
+}
+.highcharts-data-table th:first-child {
+  width: 25%;
+  border-right: 1px solid $light-blue;
+}
+.highcharts-data-table tr:not(first-of-type){
+  border-top: 1px solid $light-blue;
+}
+.highcharts-data-table tr:last-of-type{
+  border-bottom: 1px solid $light-blue;
+}
+.highcharts-data-table tr:nth-child(odd) {
+  background-color: $light-grey;
+}
+.highcharts-data-table tr:hover {
+  background-color: $feint-grey;
+  color: $dark-grey;
+}
+.highcharts-data-table caption {
+  border: none;
+  font-size: 1em;
+}

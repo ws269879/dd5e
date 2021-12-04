@@ -1,0 +1,158 @@
+.icon {
+  display: inline-block;
+  width: 18px;
+  height: 18px
+}
+
+.icon svg {
+  fill: #000;
+  width: 18px;
+  height: 18px
+}
+
+.icon--circle {
+  background-color: #2b3840;
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+  position: relative
+}
+
+.icon--circle svg {
+  position: absolute;
+  top: 4px;
+  right: 4px;
+  fill: #fff;
+  width: 15px;
+  height: 15px
+}
+
+.icon--circle:hover {
+  background-color: #e85e13
+}
+
+.icon--add-remove {
+  transform: rotate(45deg)
+}
+
+.icon--small {
+  height: 14px;
+  width: 14px
+}
+
+.icon--small svg {
+  height: 14px;
+  width: 14px
+}
+
+.add .icon--add-remove {
+  transform: rotate(0)
+}
+
+
+.icon{
+  stroke: currentColor;
+}
+
+.icon--flipped{
+  transform: rotate(180deg);
+}
+
+.icon--arrow-right{
+  height: 13px;
+  width: 8px;
+  fill: currentColor;
+  stroke: none;
+}
+
+.icon--arrow-down{
+  height: 12px;
+  width: 19px;
+  fill: currentColor;
+  stroke: none;
+}
+
+.icon--arrow-down-private {
+  height: 12px;
+  width: 19px;
+  fill: currentColor;
+  stroke: none;
+  opacity: 0.05;
+}
+
+.icon--arrow-left{
+  height: 13px;
+  width: 8px;
+  fill: currentColor;
+  stroke: none;
+  transform: rotate(180deg);
+}
+
+.icon--hamburger, .icon--close{
+  height: 24px;
+  width: 24px;
+  fill: currentColor;
+  stroke: none;
+}
+
+
+.icon--btn{
+  position: absolute;
+  margin: auto;
+  top: 0;
+  right: 16px;
+  bottom: 0;
+}
+
+.icon--account{
+  width: 90px;
+  height: 90px;
+  stroke: none;
+  fill: $light-blue;
+}
+
+.icon--left{
+  right: auto;
+  left: 0;
+}
+
+.icon--grid, .icon--list{
+  height: 25px;
+  width: 25px;
+  left: calc(50% - 13px);
+  top: calc(50% - 13px);
+  stroke: none;
+  fill: $dark-grey;
+}
+
+.icon--active{
+  fill: $blue;
+}
+
+.icon--tick{
+  width: 21px;
+  height: 21px;
+  vertical-align: sub;
+}
+
+.icon--cross{
+  width: 21px;
+  height: 21px;
+  stroke: none;
+  fill: $rag-red;
+}
+
+.icon--arrow--large{
+  width: 12px;
+  height: 19px;
+}
+
+.icon--arrow--large--vertical--50 {
+  top: 50%;
+}
+
+.icon--flag{
+  margin-top: 13px;
+  height: 22px;
+  width: 22px;
+}

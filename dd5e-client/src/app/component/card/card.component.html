@@ -1,0 +1,18 @@
+<mat-card [class.clickable]="links.length === 1" (click)="handleClick()" [id]="title">
+  <mat-card-header>
+    <div mat-card-avatar [ngStyle]="{ 'background-image': 'url(' + image.link + ')'}"></div>
+    <mat-card-title>{{ title }}</mat-card-title>
+  </mat-card-header>
+  <svg *ngIf="image.type === 'customSvg'" mat-card-image aria-label="image.alt || title | translate">
+    <use [attr.xlink:href]="image.link" />
+  </svg>
+  <img *ngIf="image.type !== 'customSvg'" mat-card-image [src]="image.link" [alt]="image.alt || title">
+  <mat-card-content>
+    <p>
+      {{ content }}
+    </p>
+  </mat-card-content>
+  <mat-card-actions>
+    <a *ngFor="let link of links" mat-button [routerLink]="link.link">{{ link.text }}</a>
+  </mat-card-actions>
+</mat-card>

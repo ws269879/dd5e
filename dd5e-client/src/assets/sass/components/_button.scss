@@ -1,0 +1,239 @@
+.btn {
+  display: inline-block;
+  background-color: $dark-grey;
+  color: #fff;
+  cursor: pointer;
+  line-height: em(27px);
+  padding-top: 4px;
+  padding-left: 20px;
+  padding-right: 20px;
+  min-height: 50px;
+  border: none;
+  outline: none;
+  transition: .1s all ease-in-out;
+  margin-bottom: 1em;
+  margin-right: 1em;
+  align-self: flex-start;
+
+  &:hover, &:focus{
+    background-color: #00557f;
+  }
+
+  @include respond-to(handhelds){
+    font-size: em(16px);
+    line-height: em(25px, 16px);
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  &:disabled{
+    cursor: default;
+  }
+}
+
+.btn-select-neighbour {
+  display: inline-block;
+  background-color: $dark-grey;
+  color: #fff;
+  cursor: pointer;
+  line-height: em(27px);
+  padding-top: 4px;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-bottom: 4px;
+  min-height: 53px;
+  border: none;
+  outline: none;
+  transition: background-color .2s ease-in-out;
+  margin-bottom: 1em;
+  margin-right: 0.9em;
+  align-self: flex-start;
+
+  &:hover, &:focus{
+    background-color: #00557f;
+  }
+
+  @include respond-to(handhelds){
+    font-size: em(16px);
+    line-height: em(25px, 16px);
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  &:disabled{
+    cursor: default;
+  }
+}
+
+.btn--primary{
+  background-color: $blue;
+
+  &:hover, &:focus{
+    background-color: $dark-grey;
+  }
+
+  &:disabled{
+    background-color: $medium-grey;
+  }
+}
+
+.btn--outline--red{
+  border: 1px solid $rag-red;
+  background-color: transparent;
+  color: $rag-red;
+
+  &:hover, &:focus{
+    color: $white;
+    border-color: $white;
+    background-color: $rag-red;
+  }
+
+  &:disabled{
+    color: $medium-grey;
+    border-color: $medium-grey;
+  }
+}
+
+.btn--small {
+  padding: 4px 8px 5px 8px;
+  font-size: 13px
+}
+
+.btn--outline {
+  border: 1px solid $blue;
+  background-color: transparent;
+  color: $blue;
+
+  &:hover, &:focus{
+    color: $white;
+    border-color: $white;
+    background-color: $blue;
+  }
+
+  &:disabled{
+    color: $medium-grey;
+    border-color: $medium-grey;
+  }
+}
+
+.btn-outline--slim {
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-bottom: 0;
+  border-radius: 5px;
+  height: auto;
+  min-height: 45px;
+  line-height: 1.2em;
+}
+
+a.btn--text{
+  &:hover, &:focus {
+    text-decoration: underline;
+  }
+  .btn__icon--text{
+    top: 10px;
+
+    @include respond-to(tablets-and-smaller){
+      top: 8px;
+      right: 20px;
+    }
+  }
+}
+
+.btn--text {
+  background-color: transparent;
+  color: $blue;
+  padding-right: 35px;
+  padding-left: 0;
+
+  &:hover, &:focus{
+    color: $dark-grey;
+    border-color: $dark-grey;
+    background-color: transparent;
+  }
+
+  &:hover{
+    .btn__icon--text{
+      right: 15px;
+    }
+  }
+
+  &:disabled{
+    color: $medium-grey;
+
+    .btn__icon--text {
+      right: 30px;
+    }
+  }
+}
+
+.btn--icon{
+  position: relative;
+  padding-right: 45px;
+
+  @include respond-to(handhelds){
+    padding-right: 37px;
+  }
+}
+
+.btn--icon--left{
+  padding-right: 0;
+  padding-left: 15px;
+  height: auto;
+  min-height: initial;
+}
+
+.btn__icon{
+  position: absolute;
+  top: 25%;
+  right: 15px;
+
+  @include respond-to(handhelds){
+    right: 5px;
+  }
+}
+
+.btn__icon--arrow{
+  padding-right: 35px;
+
+  .icon{
+    top: 18px;
+  }
+}
+
+.btn__icon--text{
+  top: 18px;
+  right: 25px;
+  transition: right .2s ease-in-out;
+}
+
+.btn--icon.btn--outline:not(disabled){
+  .btn__icon{
+    fill: $blue;
+  }
+
+  &:hover {
+    .btn__icon {
+      fill: $dark-grey;
+    }
+  }
+
+  &:disabled{
+    .btn__icon {
+      fill: $medium-grey;
+    }
+  }
+}
+
+.btn__icon-only{
+  width: 40px;
+  height: 40px;
+  margin: 0;
+  padding: 0;
+  vertical-align: bottom;
+}
+
+.btn--pull-right{
+  float: right;
+  margin: 45px 0 0;
+}

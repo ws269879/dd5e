@@ -1,0 +1,6 @@
+body.js-menu-open{
+  @include respond-to(tablets-and-smaller){
+    position: fixed;
+    width: 100%;
+  }
+}
