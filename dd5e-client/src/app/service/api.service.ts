@@ -74,6 +74,15 @@ export class ApiService {
     }
   }
 
+  async getLanguageDetails(lang: string) {
+    try {
+      const url = `${this.baseUrl}/languages/${lang}`
+      return await this._http.get<ILanguageDetails>(url).toPromise()
+    } catch (e) {
+      return null
+    }
+  }
+
   async getMagicSchools() {
     try {
       const url = `${this.baseUrl}/magic-schools`
@@ -239,4 +248,13 @@ export interface IFeatDetails {
     minimum_score: number;
   }[];
   desc: string[]
+}
+
+export interface ILanguageDetails {
+  name: string;
+  url: string;
+  index: string;
+  type: string;
+  script: string;
+  typical_speakers: string[]
 }

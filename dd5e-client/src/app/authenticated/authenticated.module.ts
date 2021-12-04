@@ -22,7 +22,8 @@ import {MatGridListModule} from '@angular/material/grid-list'
 import {ClassesDetailsComponent} from './classes/details/details.component'
 import {MatExpansionModule} from '@angular/material/expansion'
 import {MatListModule} from '@angular/material/list';
-import { FeatsDetailsComponent } from './feats/details/details.component'
+import { FeatsDetailsComponent } from './feats/details/details.component';
+import { LanguagesDetailsComponent } from './languages/details/details.component'
 
 @NgModule({
   declarations: [
@@ -39,7 +40,8 @@ import { FeatsDetailsComponent } from './feats/details/details.component'
     AlignmentsComponent,
     AlignmentDetailsComponent,
     ClassesDetailsComponent,
-    FeatsDetailsComponent
+    FeatsDetailsComponent,
+    LanguagesDetailsComponent
   ],
   imports: [
     CommonModule,

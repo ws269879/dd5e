@@ -14,6 +14,7 @@ import {SpellsComponent} from './spells/spells.component'
 import {TraitsComponent} from './traits/traits.component'
 import {ClassesDetailsComponent} from './classes/details/details.component'
 import {FeatsDetailsComponent} from './feats/details/details.component'
+import {LanguagesDetailsComponent} from './languages/details/details.component'
 
 const routes: Routes = [
   {
@@ -67,8 +68,8 @@ const routes: Routes = [
         component: LanguagesComponent
       },
       {
-        path: ':languages',
-        component: AlignmentDetailsComponent
+        path: ':language',
+        component: LanguagesDetailsComponent
       }
     ]
   },
