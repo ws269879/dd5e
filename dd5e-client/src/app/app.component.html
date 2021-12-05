@@ -6,6 +6,7 @@
       </button>
       <span>dd5e explorer</span>
       <span class="menu-spacer"></span>
+      <span *ngIf="time">{{time}}</span>
       <button *ngIf="user"
               matTooltip="Logout"
               (click)="logoutClick()"
