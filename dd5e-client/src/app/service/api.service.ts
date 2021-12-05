@@ -331,8 +331,9 @@ export interface IMonsterDetails {
   hit_points: number;
   hit_dice: string;
   speed: {
-    walk: string;
-    swim: string;
+    walk?: string;
+    swim?: string;
+    fly?: string;
   };
   strength: number;
   dexterity: number;
@@ -348,9 +349,9 @@ export interface IMonsterDetails {
     }
     value: number
   }[]
-  damage_vulnerabilities: any[];
-  damage_resistances: any[];
-  damage_immunities: any[];
+  damage_vulnerabilities: string[];
+  damage_resistances: string[];
+  damage_immunities: string[];
   condition_immunities: any[];
   senses: {
     darkvision: string;

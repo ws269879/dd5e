@@ -31,126 +31,135 @@
           <mat-list>
             <mat-list-item>
               <mat-divider></mat-divider>
-              <div style="width: 100%; display: flex; flex-direction: row; justify-content: space-between; padding-bottom: 20px">
-                <p>Hit Dice:</p>
+              <div style="width: 100%; display: flex; flex-direction: row; justify-content: space-between; ">
+                <p><b>Hit Dice:</b></p>
                 <p>{{details.hit_dice}}</p>
               </div>
             </mat-list-item>
             <mat-list-item>
               <mat-divider></mat-divider>
-              <div style="width: 100%; display: flex; flex-direction: row; justify-content: space-between; padding-bottom: 20px">
-                <p>Size:</p>
+              <div style="width: 100%; display: flex; flex-direction: row; justify-content: space-between; ">
+                <p><b>Size:</b></p>
                 <p>{{details.size}}</p>
               </div>
             </mat-list-item>
             <mat-list-item>
               <mat-divider></mat-divider>
-              <div style="width: 100%; display: flex; flex-direction: row; justify-content: space-between; padding-bottom: 20px">
-                <p>Type:</p>
+              <div style="width: 100%; display: flex; flex-direction: row; justify-content: space-between; ">
+                <p><b>Type:</b></p>
                 <p>{{details.type}}</p>
               </div>
             </mat-list-item>
-            <mat-list-item>
+            <mat-list-item *ngIf="details.subtype">
               <mat-divider></mat-divider>
-              <div style="width: 100%; display: flex; flex-direction: row; justify-content: space-between; padding-bottom: 20px">
-                <p>Sub Type:</p>
+              <div style="width: 100%; display: flex; flex-direction: row; justify-content: space-between; ">
+                <p><b>Sub Type:</b></p>
                 <p>{{details.subtype}}</p>
               </div>
             </mat-list-item>
             <mat-list-item>
               <mat-divider></mat-divider>
-              <div style="width: 100%; display: flex; flex-direction: row; justify-content: space-between; padding-bottom: 20px">
-                <p>Languages:</p>
+              <div style="width: 100%; display: flex; flex-direction: row; justify-content: space-between; ">
+                <p><b>Languages:</b></p>
                 <p>{{details.languages}}</p>
               </div>
             </mat-list-item>
             <mat-list-item>
               <mat-divider></mat-divider>
-              <div style="width: 100%; display: flex; flex-direction: row; justify-content: space-between; padding-bottom: 20px">
-                <p>Alignment:</p>
+              <div style="width: 100%; display: flex; flex-direction: row; justify-content: space-between; ">
+                <p><b>Alignment:</b></p>
                 <p>{{details.alignment}}</p>
               </div>
             </mat-list-item>
             <mat-list-item>
               <mat-divider></mat-divider>
-              <div style="width: 100%; display: flex; flex-direction: row; justify-content: space-between; padding-bottom: 20px">
-                <p>Armour Class (AC):</p>
+              <div style="width: 100%; display: flex; flex-direction: row; justify-content: space-between; ">
+                <p><b>Armour Class (AC):</b></p>
                 <p>{{details.armor_class}}</p>
               </div>
             </mat-list-item>
             <mat-list-item>
               <mat-divider></mat-divider>
-              <div style="width: 100%; display: flex; flex-direction: row; justify-content: space-between; padding-bottom: 20px">
-                <p>Hit Points (HP):</p>
+              <div style="width: 100%; display: flex; flex-direction: row; justify-content: space-between; ">
+                <p><b>Hit Points (HP):</b></p>
                 <p>{{details.hit_points}}</p>
               </div>
             </mat-list-item>
             <mat-list-item>
               <mat-divider></mat-divider>
-              <div style="width: 100%; display: flex; flex-direction: row; justify-content: space-between; padding-bottom: 20px">
-                <p>XP:</p>
+              <div style="width: 100%; display: flex; flex-direction: row; justify-content: space-between; ">
+                <p><b>XP:</b></p>
                 <p>{{details.xp}}</p>
               </div>
             </mat-list-item>
             <mat-list-item>
               <mat-divider></mat-divider>
-              <div style="width: 100%; display: flex; flex-direction: row; justify-content: space-between; padding-bottom: 20px">
-                <p>Hit Dice:</p>
+              <div style="width: 100%; display: flex; flex-direction: row; justify-content: space-between; ">
+                <p><b>Hit Dice:</b></p>
                 <p>{{details.hit_dice}}</p>
               </div>
             </mat-list-item>
-            <mat-list-item>
+            <mat-list-item *ngIf="details.speed.walk">
               <mat-divider></mat-divider>
-              <div style="width: 100%; display: flex; flex-direction: row; justify-content: space-between; padding-bottom: 20px">
-                <p>Walking Speed:</p>
+              <div style="width: 100%; display: flex; flex-direction: row; justify-content: space-between; ">
+                <p><b>Walking Speed:</b></p>
                 <p>{{details.speed.walk}}</p>
               </div>
             </mat-list-item>
-            <mat-list-item>
+            <mat-list-item *ngIf="details.speed.swim">
               <mat-divider></mat-divider>
-              <div style="width: 100%; display: flex; flex-direction: row; justify-content: space-between; padding-bottom: 20px">
-                <p>Swimming Speed:</p>
+              <div style="width: 100%; display: flex; flex-direction: row; justify-content: space-between; ">
+                <p><b>Swimming Speed:</b></p>
                 <p>{{details.speed.swim}}</p>
               </div>
             </mat-list-item>
-            <mat-list-item>
+            <mat-list-item *ngIf="details.speed.fly">
               <mat-divider></mat-divider>
-              <p>Stats:</p>
-              <mat-divider></mat-divider>
-              <div style="width: 100%; display: flex; flex-direction: row; justify-content: space-between; padding-bottom: 20px">
-                <p>Strength:</p>
-                <p>{{details.strength}}</p>
-              </div>
-              <mat-divider></mat-divider>
-              <div style="width: 100%; display: flex; flex-direction: row; justify-content: space-between; padding-bottom: 20px">
-                <p>Dexterity:</p>
-                <p>{{details.dexterity}}</p>
-              </div>
-              <mat-divider></mat-divider>
-              <div style="width: 100%; display: flex; flex-direction: row; justify-content: space-between; padding-bottom: 20px">
-                <p>Constitution:</p>
-                <p>{{details.constitution}}</p>
-              </div>
-              <mat-divider></mat-divider>
-              <div style="width: 100%; display: flex; flex-direction: row; justify-content: space-between; padding-bottom: 20px">
-                <p>Intelligence:</p>
-                <p>{{details.intelligence}}</p>
-              </div>
-              <mat-divider></mat-divider>
-              <div style="width: 100%; display: flex; flex-direction: row; justify-content: space-between; padding-bottom: 20px">
-                <p>Wisdom:</p>
-                <p>{{details.wisdom}}</p>
-              </div>
-              <mat-divider></mat-divider>
-              <div style="width: 100%; display: flex; flex-direction: row; justify-content: space-between; padding-bottom: 20px">
-                <p>Charisma:</p>
-                <p>{{details.charisma}}</p>
+              <div style="width: 100%; display: flex; flex-direction: row; justify-content: space-between; ">
+                <p><b>Flying Speed:</b></p>
+                <p>{{details.speed.fly}}</p>
               </div>
             </mat-list-item>
             <mat-list-item>
               <mat-divider></mat-divider>
-              <div style="width: 100%; display: flex; flex-direction: row; justify-content: space-between; padding-bottom: 20px">
-                <p>Challenge Rating:</p>
+              <div style="width: 100%; display: flex; flex-direction: column;">
+                <p><b>Stats:</b></p>
+                <mat-divider></mat-divider>
+                <div style="width: 100%; display: flex; flex-direction: row; justify-content: space-between; margin-left: 10px">
+                  <p><b>- Strength:</b></p>
+                  <p>{{details.strength}}</p>
+                </div>
+                <mat-divider></mat-divider>
+                <div style="width: 100%; display: flex; flex-direction: row; justify-content: space-between; margin-left: 10px">
+                  <p><b>- Dexterity:</b></p>
+                  <p>{{details.dexterity}}</p>
+                </div>
+                <mat-divider></mat-divider>
+                <div style="width: 100%; display: flex; flex-direction: row; justify-content: space-between; margin-left: 10px">
+                  <p><b>- Constitution:</b></p>
+                  <p>{{details.constitution}}</p>
+                </div>
+                <mat-divider></mat-divider>
+                <div style="width: 100%; display: flex; flex-direction: row; justify-content: space-between; margin-left: 10px">
+                  <p><b>- Intelligence:</b></p>
+                  <p>{{details.intelligence}}</p>
+                </div>
+                <mat-divider></mat-divider>
+                <div style="width: 100%; display: flex; flex-direction: row; justify-content: space-between; margin-left: 10px">
+                  <p><b>- Wisdom:</b></p>
+                  <p>{{details.wisdom}}</p>
+                </div>
+                <mat-divider></mat-divider>
+                <div style="width: 100%; display: flex; flex-direction: row; justify-content: space-between; margin-left: 10px">
+                  <p><b>- Charisma:</b></p>
+                  <p>{{details.charisma}}</p>
+                </div>
+              </div>
+            </mat-list-item>
+            <mat-list-item>
+              <mat-divider></mat-divider>
+              <div style="width: 100%; display: flex; flex-direction: row; justify-content: space-between; ">
+                <p><b>Challenge Rating:</b></p>
                 <p>{{details.challenge_rating}}</p>
               </div>
             </mat-list-item>
@@ -166,7 +175,7 @@
           <mat-list>
             <mat-list-item *ngFor="let proficiency of details.proficiencies">
               <mat-divider></mat-divider>
-              <div style="width: 100%; display: flex; flex-direction: row; justify-content: space-between; padding-bottom: 20px">
+              <div style="width: 100%; display: flex; flex-direction: row; justify-content: space-between; ">
                 <p>{{proficiency.proficiency.name}}:</p>
                 <p>{{proficiency.value}}</p>
               </div>
@@ -190,7 +199,8 @@
                 </mat-expansion-panel-header>
                 <mat-list>
                   <mat-list-item *ngFor="let damageVulnerability of details.damage_vulnerabilities">
-                    <p>{{damageVulnerability | json}}</p>
+                    <mat-divider></mat-divider>
+                    <p>{{damageVulnerability}}</p>
                   </mat-list-item>
                 </mat-list>
               </mat-expansion-panel>
@@ -202,7 +212,8 @@
                 </mat-expansion-panel-header>
                 <mat-list>
                   <mat-list-item *ngFor="let damageResistance of details.damage_resistances">
-                    <p>{{damageResistance | json}}</p>
+                    <mat-divider></mat-divider>
+                    <p>{{damageResistance}}</p>
                   </mat-list-item>
                 </mat-list>
               </mat-expansion-panel>
@@ -214,7 +225,8 @@
                 </mat-expansion-panel-header>
                 <mat-list>
                   <mat-list-item *ngFor="let damageImmunity of details.damage_immunities">
-                    <p>{{damageImmunity | json}}</p>
+                    <mat-divider></mat-divider>
+                    <p>{{damageImmunity}}</p>
                   </mat-list-item>
                 </mat-list>
               </mat-expansion-panel>
@@ -276,6 +288,7 @@
                   </mat-expansion-panel-header>
                   <mat-list>
                     <mat-list-item *ngFor="let damage of action.damage">
+                      <mat-divider></mat-divider>
                       <p>{{damage.damage_type.name}}: {{damage.damage_dice}}</p>
                     </mat-list-item>
                   </mat-list>

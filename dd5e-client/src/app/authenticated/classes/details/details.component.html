@@ -33,6 +33,7 @@
           </mat-expansion-panel-header>
           <mat-list>
             <mat-list-item *ngFor="let proficiency of details.proficiencies">
+              <mat-divider></mat-divider>
               <p>{{proficiency.name}}</p>
             </mat-list-item>
           </mat-list>
@@ -45,14 +46,15 @@
             </mat-panel-title>
           </mat-expansion-panel-header>
           <mat-list>
-            <div class="list-item-vertical-content" *ngFor="let proficiency_choice of details.proficiency_choices">
-              <p class="mat-h3">You can choose up to {{proficiency_choice.choose}} from the following</p>
-              <ul class="inner-list">
-                <li *ngFor="let proficiency of proficiency_choice.from">
-                  <p>{{proficiency.name}}</p>
-                </li>
-              </ul>
-            </div>
+            <mat-list-item *ngFor="let proficiency_choice of details.proficiency_choices">
+              <mat-divider></mat-divider>
+              <div class="list-item-vertical-content">
+                <p class="mat-h3">You can choose up to {{proficiency_choice.choose}} from the following</p>
+                <div class="inner-list list-item-vertical-content">
+                  <p class="clear" *ngFor="let proficiency of proficiency_choice.from">- {{proficiency.name}}</p>
+                </div>
+              </div>
+            </mat-list-item>
           </mat-list>
         </mat-expansion-panel>
 
@@ -64,6 +66,7 @@
           </mat-expansion-panel-header>
           <mat-list>
             <mat-list-item *ngFor="let saving_throw of details.saving_throws">
+              <mat-divider></mat-divider>
               <p>{{saving_throw.name}}</p>
             </mat-list-item>
           </mat-list>
@@ -77,6 +80,7 @@
           </mat-expansion-panel-header>
           <mat-list>
             <mat-list-item *ngFor="let equipment of details.starting_equipment">
+              <mat-divider></mat-divider>
               <p>{{equipment.quantity}} x {{equipment.equipment.name}}</p>
             </mat-list-item>
           </mat-list>
@@ -89,15 +93,18 @@
             </mat-panel-title>
           </mat-expansion-panel-header>
           <mat-list>
-            <div class="list-item-vertical-content" *ngFor="let starting_equipment_option of details.starting_equipment_options">
-              <p class="mat-h3">You can choose up to {{starting_equipment_option.choose}} from the following</p>
-              <ul class="inner-list">
-                <li *ngFor="let equipment of starting_equipment_option.from">
-                  <p *ngIf="equipment.equipment">{{equipment.quantity}} x {{equipment.equipment.name}}</p>
-                  <p *ngIf="equipment.equipment_option">{{equipment.equipment_option.choose}} x {{equipment.equipment_option.from.equipment_category.name}}: </p>
-                </li>
-              </ul>
-            </div>
+            <mat-list-item *ngFor="let starting_equipment_option of details.starting_equipment_options">
+              <mat-divider></mat-divider>
+              <div class="list-item-vertical-content">
+                <p class="mat-h3">You can choose up to {{starting_equipment_option.choose}} from the following</p>
+                <div class="inner-list list-item-vertical-content">
+                  <div class="clear" *ngFor="let equipment of starting_equipment_option.from">
+                    <p class="clear" *ngIf="equipment.equipment">- {{equipment.quantity}} x {{equipment.equipment.name}}</p>
+                    <p class="clear" *ngIf="equipment.equipment_option">- {{equipment.equipment_option.choose}} x {{equipment.equipment_option.from.equipment_category.name}}: </p>
+                  </div>
+                </div>
+              </div>
+            </mat-list-item>
           </mat-list>
         </mat-expansion-panel>
 

@@ -92,6 +92,20 @@ export class CardsService {
       }
     },
     {
+      title: 'Races',
+      content: 'Take a look at the races D&D 5e has to offer',
+      links: [
+        {
+          text: 'view',
+          link: '/app/races'
+        }
+      ],
+      image: {
+        link: '/assets/img/dashboard/races.jpg',
+        type: 'img'
+      }
+    },
+    {
       title: 'Skills',
       content: 'Take a look at the skills D&D 5e has to offer',
       links: [
@@ -116,20 +130,6 @@ export class CardsService {
       ],
       image: {
         link: '/assets/img/dashboard/spells.jpg',
-        type: 'img'
-      }
-    },
-    {
-      title: 'Races',
-      content: 'Take a look at the races D&D 5e has to offer',
-      links: [
-        {
-          text: 'view',
-          link: '/app/races'
-        }
-      ],
-      image: {
-        link: '/assets/img/dashboard/races.jpg',
         type: 'img'
       }
     },
