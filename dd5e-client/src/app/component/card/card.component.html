@@ -1,9 +1,9 @@
-<mat-card [class.clickable]="links.length === 1" (click)="handleClick()" [id]="title">
+<mat-card [class.clickable]="links.length === 1" (click)="handleClick()" [id]="title + '-app-card'">
   <mat-card-header>
     <div mat-card-avatar [ngStyle]="{ 'background-image': 'url(' + image.link + ')'}"></div>
     <mat-card-title>{{ title }}</mat-card-title>
   </mat-card-header>
-  <svg *ngIf="image.type === 'customSvg'" mat-card-image aria-label="image.alt || title | translate">
+  <svg *ngIf="image.type === 'customSvg'" mat-card-image [attr.aria-label]="image.alt || title">
     <use [attr.xlink:href]="image.link" />
   </svg>
   <img *ngIf="image.type !== 'customSvg'" mat-card-image [src]="image.link" [alt]="image.alt || title">
