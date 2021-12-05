@@ -28,7 +28,8 @@ import { MagicSchoolDetailsComponent } from './magic-schools/details/magic-schoo
 import { MonstersDetailsComponent } from './monsters/details/details.component';
 import { SkillsDetailsComponent } from './skills/details/details.component';
 import { SpellsDetailsComponent } from './spells/details/details.component';
-import { RacesDetailsComponent } from './races/details/details.component'
+import { RacesDetailsComponent } from './races/details/details.component';
+import { TraitsDetailsComponent } from './traits/details/details.component'
 
 @NgModule({
   declarations: [
@@ -51,7 +52,8 @@ import { RacesDetailsComponent } from './races/details/details.component'
     MonstersDetailsComponent,
     SkillsDetailsComponent,
     SpellsDetailsComponent,
-    RacesDetailsComponent
+    RacesDetailsComponent,
+    TraitsDetailsComponent
   ],
   imports: [
     CommonModule,

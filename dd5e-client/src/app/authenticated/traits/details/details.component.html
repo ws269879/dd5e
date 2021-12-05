@@ -1,0 +1,37 @@
+<header class="page-header">
+  <div class="o-grid">
+    <div class="page-header__title">
+      <div style="display: flex; flex-direction: row">
+        <a routerLink="/app/traits"
+           matTooltip="Back to all traits"
+           mat-icon-button
+           aria-label="Back"
+        >
+          <mat-icon>keyboard_backspace</mat-icon>
+        </a>
+        <app-skeleton [isLoading]="!details" [theme]="{height: '40px', width: '70px'}">
+          <h1 *ngIf="details">{{details.name}}</h1>
+        </app-skeleton>
+      </div>
+    </div>
+  </div>
+</header>
+
+<div class="page-content">
+  <div class="o-grid" style="padding-top: 0">
+    <app-skeleton [isLoading]="!details" [theme]="{height: '100px', width: '100%'}">
+      <div *ngIf="details">
+        <p><b>Description:</b></p>
+        <p style="padding-left: 10px" *ngFor="let desc of details.desc">{{desc}}</p>
+        <p><b>Races</b></p>
+        <p *ngFor="let race of details.races" style="margin-left: 10px">- {{race.name}}</p>
+        <div *ngIf="details.subraces.length > 0" >
+          <p><b>Sub Races</b></p>
+          <p *ngFor="let race of details.subraces" style="margin-left: 10px">- {{race.name}}</p>
+        </div>
+      </div>
+    </app-skeleton>
+  </div>
+</div>
+
+

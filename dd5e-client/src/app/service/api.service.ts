@@ -181,6 +181,15 @@ export class ApiService {
       return null
     }
   }
+
+  async getTraitDetails(trait: string) {
+    try {
+      const url = `${this.baseUrl}/traits/${trait}`
+      return await this._http.get<ITraitDetails>(url).toPromise()
+    } catch (e) {
+      return null
+    }
+  }
 }
 
 interface IApiMultipleResponse {
@@ -553,6 +562,24 @@ export interface IRaceDetails {
     name: string;
     url: string;
   }[];
+  url: string;
+}
+
+export interface ITraitDetails {
+  index: string;
+  races:{
+    index: string;
+    name: string;
+    url: string
+  }[];
+  subraces: {
+    index: string;
+    name: string;
+    url: string;
+  }[];
+  name: string;
+  desc: string[];
+  proficiencies: any[];
   url: string;
 }
 
