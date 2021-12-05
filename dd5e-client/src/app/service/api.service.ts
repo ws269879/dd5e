@@ -6,7 +6,7 @@ import {HttpClient} from '@angular/common/http'
 })
 export class ApiService {
 
-  private baseUrl = 'http://www.dnd5eapi.co/api'
+  private baseUrl = 'https://www.dnd5eapi.co/api'
 
   constructor(private _http: HttpClient) { }
 
