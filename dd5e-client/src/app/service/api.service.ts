@@ -155,6 +155,15 @@ export class ApiService {
     }
   }
 
+  async getSpellDetails(spell: string) {
+    try {
+      const url = `${this.baseUrl}/spells/${spell}`
+      return await this._http.get<ISpellDetails>(url).toPromise()
+    } catch (e) {
+      return null
+    }
+  }
+
   async getTraits() {
     try {
       const url = `${this.baseUrl}/traits`
@@ -427,3 +436,74 @@ export interface ISkillDetails {
   };
   url: string;
 }
+
+export interface ISpellDetails {
+  index: string;
+  name:string;
+  desc: string[];
+  higher_level: string[];
+  range: string;
+  components: string[];
+  material: string;
+  ritual: boolean;
+  duration: string;
+  concentration: boolean;
+  casting_time: string;
+  level: number;
+  attack_type: string;
+  damage:{
+    damage_type:{
+      index: string;
+      name: string;
+      url: string;
+    };
+    damage_at_slot_level:{
+      1: string;
+      2: string;
+      3: string;
+      4: string;
+      5: string;
+      6: string;
+      7: string;
+      8: string;
+      9: string;
+    };
+    damage_at_character_level:{
+      1: string;
+      2: string;
+      3: string;
+      4: string;
+      5: string;
+      6: string;
+      7: string;
+      8: string;
+      9: string;
+      10: string;
+      11: string;
+      12: string;
+      13: string;
+      14: string;
+      15: string;
+      16: string;
+      17: string;
+      18: string;
+    };
+  };
+  school:{
+    index: string;
+    name: string;
+    url: string;
+  };
+  classes: {
+    index: string;
+    name: string;
+    url: string;
+  }[];
+  subclasses:{
+    index: string;
+    name: string;
+    url: string;
+  }[];
+  url: string;
+}
+

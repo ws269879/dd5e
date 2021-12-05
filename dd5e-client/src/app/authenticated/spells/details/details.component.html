@@ -1,0 +1,78 @@
+<header class="page-header">
+  <div class="o-grid">
+    <div class="page-header__title">
+      <div style="display: flex; flex-direction: row">
+        <a routerLink="/app/skills"
+           matTooltip="Back to all skills"
+           mat-icon-button
+           aria-label="Back"
+        >
+          <mat-icon>keyboard_backspace</mat-icon>
+        </a>
+        <app-skeleton [isLoading]="!details" [theme]="{height: '40px', width: '70px'}">
+          <h1 *ngIf="details">{{details.name}}</h1>
+        </app-skeleton>
+      </div>
+    </div>
+  </div>
+</header>
+
+<div class="page-content">
+  <div class="o-grid" style="padding-top: 0">
+    <h3>Overview</h3>
+    <app-skeleton [isLoading]="!details" [theme]="{height: '100px', width: '100%'}">
+      <div *ngIf="details">
+        <p><b>Description:</b></p>
+        <p style="padding-left: 10px" *ngFor="let desc of details.desc">{{desc}}</p>
+        <p style="padding-left: 10px" *ngFor="let level of details.higher_level">{{level}}</p>
+        <p><b>Level:</b> {{details.level}}</p>
+        <p><b>Range:</b> {{details.range}}</p>
+        <p *ngIf="details.material"><b>Material:</b> {{details.material}}</p>
+        <p><b>This spell is <span *ngIf="!details.ritual">not</span> a ritual</b></p>
+        <p><b>This spell does <span *ngIf="!details.concentration">not</span> require concentration</b></p>
+        <p *ngIf="details.attack_type"><b>Attack type:</b> {{details.attack_type}}</p>
+        <p><b>Duration:</b> {{details.duration}}</p>
+        <p><b>Casting time:</b> {{details.casting_time}}</p>
+        <p><b>Magic school:</b> {{details.school.name}}</p>
+        <p><b>Can be used by:</b></p>
+        <p style="padding-left: 10px" *ngFor="let class of details.classes">- {{class.name}}</p>
+        <p style="padding-left: 10px" *ngFor="let subClass of details.subclasses">- {{subClass.name}}</p>
+        <p><b>Damage type: </b>{{details.damage.damage_type.name}}</p>
+        <p><b>Damage:</b></p>
+        <div style="padding-left: 10px" *ngIf="details.damage.damage_at_slot_level">
+          <p *ngIf="details.damage.damage_at_slot_level['1']"><b>- At slot level 1:</b> {{details.damage.damage_at_slot_level["1"]}}</p>
+          <p *ngIf="details.damage.damage_at_slot_level['2']"><b>- At slot level 2:</b> {{details.damage.damage_at_slot_level["2"]}}</p>
+          <p *ngIf="details.damage.damage_at_slot_level['3']"><b>- At slot level 3:</b> {{details.damage.damage_at_slot_level["3"]}}</p>
+          <p *ngIf="details.damage.damage_at_slot_level['4']"><b>- At slot level 4:</b> {{details.damage.damage_at_slot_level["4"]}}</p>
+          <p *ngIf="details.damage.damage_at_slot_level['5']"><b>- At slot level 5:</b> {{details.damage.damage_at_slot_level["5"]}}</p>
+          <p *ngIf="details.damage.damage_at_slot_level['6']"><b>- At slot level 6:</b> {{details.damage.damage_at_slot_level["6"]}}</p>
+          <p *ngIf="details.damage.damage_at_slot_level['7']"><b>- At slot level 7:</b> {{details.damage.damage_at_slot_level["7"]}}</p>
+          <p *ngIf="details.damage.damage_at_slot_level['8']"><b>- At slot level 8:</b> {{details.damage.damage_at_slot_level["8"]}}</p>
+          <p *ngIf="details.damage.damage_at_slot_level['9']"><b>- At slot level 9:</b> {{details.damage.damage_at_slot_level["9"]}}</p>
+        </div>
+        <div style="padding-left: 10px" *ngIf="details.damage.damage_at_character_level">
+          <p *ngIf="details.damage.damage_at_character_level['1']"><b>- At character level 1:</b> {{details.damage.damage_at_character_level["1"]}}</p>
+          <p *ngIf="details.damage.damage_at_character_level['2']"><b>- At character level 2:</b> {{details.damage.damage_at_character_level["2"]}}</p>
+          <p *ngIf="details.damage.damage_at_character_level['3']"><b>- At character level 3:</b> {{details.damage.damage_at_character_level["3"]}}</p>
+          <p *ngIf="details.damage.damage_at_character_level['4']"><b>- At character level 4:</b> {{details.damage.damage_at_character_level["4"]}}</p>
+          <p *ngIf="details.damage.damage_at_character_level['5']"><b>- At character level 5:</b> {{details.damage.damage_at_character_level["5"]}}</p>
+          <p *ngIf="details.damage.damage_at_character_level['6']"><b>- At character level 6:</b> {{details.damage.damage_at_character_level["6"]}}</p>
+          <p *ngIf="details.damage.damage_at_character_level['7']"><b>- At character level 7:</b> {{details.damage.damage_at_character_level["7"]}}</p>
+          <p *ngIf="details.damage.damage_at_character_level['8']"><b>- At character level 8:</b> {{details.damage.damage_at_character_level["8"]}}</p>
+          <p *ngIf="details.damage.damage_at_character_level['9']"><b>- At character level 9:</b> {{details.damage.damage_at_character_level["9"]}}</p>
+          <p *ngIf="details.damage.damage_at_character_level['10']"><b>- At character level 10:</b> {{details.damage.damage_at_character_level["10"]}}</p>
+          <p *ngIf="details.damage.damage_at_character_level['11']"><b>- At character level 11:</b> {{details.damage.damage_at_character_level["11"]}}</p>
+          <p *ngIf="details.damage.damage_at_character_level['12']"><b>- At character level 12:</b> {{details.damage.damage_at_character_level["12"]}}</p>
+          <p *ngIf="details.damage.damage_at_character_level['13']"><b>- At character level 13:</b> {{details.damage.damage_at_character_level["13"]}}</p>
+          <p *ngIf="details.damage.damage_at_character_level['14']"><b>- At character level 14:</b> {{details.damage.damage_at_character_level["14"]}}</p>
+          <p *ngIf="details.damage.damage_at_character_level['15']"><b>- At character level 15:</b> {{details.damage.damage_at_character_level["15"]}}</p>
+          <p *ngIf="details.damage.damage_at_character_level['16']"><b>- At character level 16:</b> {{details.damage.damage_at_character_level["16"]}}</p>
+          <p *ngIf="details.damage.damage_at_character_level['17']"><b>- At character level 17:</b> {{details.damage.damage_at_character_level["17"]}}</p>
+          <p *ngIf="details.damage.damage_at_character_level['18']"><b>- At character level 18:</b> {{details.damage.damage_at_character_level["18"]}}</p>
+        </div>
+      </div>
+    </app-skeleton>
+  </div>
+</div>
+
+
