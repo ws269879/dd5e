@@ -1,45 +1,46 @@
-<header>
+<div class="flex-body">
+  <header>
+    <mat-toolbar color="primary">
+      <button *ngIf="user" (click)="drawer.toggle()" mat-icon-button aria-label="Menu">
+        <mat-icon>menu</mat-icon>
+      </button>
+      <span>dd5e explorer</span>
+      <span class="menu-spacer"></span>
+      <button *ngIf="user"
+              matTooltip="Logout"
+              (click)="logoutClick()"
+              mat-icon-button
+              aria-label="Logout">
+        <mat-icon>exit_to_app</mat-icon>
+      </button>
+    </mat-toolbar>
 
-  <mat-toolbar color="primary">
-    <button *ngIf="user" (click)="drawer.toggle()" mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
-      <mat-icon>menu</mat-icon>
-    </button>
-    <span>dd5e explorer</span>
-    <span class="example-spacer"></span>
-    <button *ngIf="user"
-            matTooltip="Logout"
-            (click)="logoutClick()"
-            mat-icon-button
-            aria-label="Logout">
-      <mat-icon>exit_to_app</mat-icon>
-    </button>
-  </mat-toolbar>
+  </header>
 
-</header>
-
-<mat-drawer-container class="example-container" autosize>
-  <mat-drawer #drawer class="example-sidenav" mode="over">
-    <mat-nav-list role="list">
-      <a mat-list-item (click)="drawer.close()" routerLink="/app">Dashboard</a>
-      <mat-divider></mat-divider>
-      <div *ngFor="let card of cardsService.getCards()">
-        <div *ngIf="card.links.length > 1">
-          <a mat-list-item (click)="drawer.close()" [routerLink]="card.links[0].link">{{ card.title  }}</a>
-          <a mat-list-item (click)="drawer.close()" class="nav-link-child" *ngFor="let link of card.links" mat-line [routerLink]="link.link">{{ link.text }}</a>
+  <mat-sidenav-container class="flex-content" autosize>
+    <mat-sidenav #drawer role="navigation" mode="over">
+      <mat-nav-list role="list" style="padding-left: 20px; padding-right: 20px ">
+        <a mat-list-item (click)="drawer.close()" routerLink="/app">Dashboard</a>
+        <mat-divider></mat-divider>
+        <div *ngFor="let card of cardsService.getCards()">
+          <div *ngIf="card.links.length > 1">
+            <a mat-list-item (click)="drawer.close()" [routerLink]="card.links[0].link">{{ card.title  }}</a>
+            <a mat-list-item (click)="drawer.close()" class="nav-link-child" *ngFor="let link of card.links" mat-line [routerLink]="link.link">{{ link.text }}</a>
+          </div>
+          <div *ngIf="card.links.length === 1">
+            <a mat-list-item *ngIf="card.links.length === 1" (click)="drawer.close()" [routerLink]="card.links[0].link">{{ card.title }}</a>
+          </div>
         </div>
-        <div *ngIf="card.links.length === 1">
-          <a mat-list-item *ngIf="card.links.length === 1" (click)="drawer.close()" [routerLink]="card.links[0].link">{{ card.title }}</a>
-        </div>
+      </mat-nav-list>
+    </mat-sidenav>
+
+    <mat-sidenav-content style="height: 100%">
+      <div class="flex-body">
+        <main class="body flex-content" style="padding-top: 1.5em">
+          <router-outlet style="min-height: 100vh;"></router-outlet>
+        </main>
       </div>
-<!--      <mat-divider></mat-divider>-->
-<!--      <a mat-list-item (click)="drawer.close()" href="/logout">{{ 'SHARED.LOGOUT' }}</a>-->
-    </mat-nav-list>
-  </mat-drawer>
+    </mat-sidenav-content>
 
-  <mat-drawer-content style="padding: 20px">
-    <main style="min-height: calc(100vh - 66px - 40px)">
-      <router-outlet style="min-height: 100%;"></router-outlet>
-    </main>
-  </mat-drawer-content>
-
-</mat-drawer-container>
+  </mat-sidenav-container>
+</div>
