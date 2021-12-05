@@ -12,7 +12,13 @@ export class NotAuthed implements CanActivate {
               private _loginService: LoginService) { }
 
   async canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot) {
-    return !this._loginService.loggedIn;
+    const userDetails = await this._loginService.getUserDetails(true).pipe(take(1)).toPromise()
+    if (!userDetails) {
+      return true
+    } else {
+      await this._router.navigate(['app'])
+      return false
+    }
   }
 
 }

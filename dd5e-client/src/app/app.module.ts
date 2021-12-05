@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core'
 import { BrowserModule } from '@angular/platform-browser'
-import { FormsModule } from '@angular/forms'
+import {FormsModule, ReactiveFormsModule} from '@angular/forms'
 import { HttpClientModule } from '@angular/common/http'
 import { AppRoutingModule } from './app-routing.module'
 import { AppComponent } from './app.component'
@@ -16,6 +16,10 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations'
 import {MatListModule} from '@angular/material/list'
 import {RouterModule} from '@angular/router'
 import {MatTooltipModule} from '@angular/material/tooltip'
+import {MatCardModule} from '@angular/material/card'
+import {MatFormFieldModule} from '@angular/material/form-field'
+import {MatInputModule} from '@angular/material/input'
+import {MatSnackBarModule} from '@angular/material/snack-bar'
 
 @NgModule({
   declarations: [
@@ -37,7 +41,12 @@ import {MatTooltipModule} from '@angular/material/tooltip'
     SharedModule,
     MatListModule,
     RouterModule,
-    MatTooltipModule
+    MatTooltipModule,
+    MatCardModule,
+    MatFormFieldModule,
+    MatInputModule,
+    ReactiveFormsModule,
+    MatSnackBarModule
   ],
   bootstrap: [AppComponent]
 })

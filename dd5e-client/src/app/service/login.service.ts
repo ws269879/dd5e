@@ -79,6 +79,7 @@ export class LoginService {
       this._userDetails = await this._http.get<IUserDetails>(`${this.baseUrl}/details`, this.baseOptions).toPromise()
       if (this._userDetails) {
         this._userDetailsSubject.next(this._userDetails)
+        this.loggedIn = true
         return this._userDetails
       }
       this._userDetailsSubject.next(null)

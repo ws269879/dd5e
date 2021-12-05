@@ -1,8 +1,43 @@
+<div class="page-content">
+  <div class="o-grid">
 
+    <mat-card>
+      <mat-card-title>Login</mat-card-title>
+      <mat-card-content>
+        <form [formGroup]="form" class="flex-body" (ngSubmit)="submit(form.value)">
+          <mat-form-field appearance="fill">
+            <mat-label>Email</mat-label>
+            <input type="email" matInput [formControlName]="'email'" [errorStateMatcher]="matcher"
+                   placeholder="Ex. john@example.com">
+            <mat-error *ngIf="form.controls.email.hasError('email') && !form.controls.email.hasError('required')">
+              Please enter a valid email address
+            </mat-error>
+            <mat-error *ngIf="form.controls.email.hasError('required')">
+              Email is <strong>required</strong>
+            </mat-error>
+          </mat-form-field>
 
-<app-skeleton [isLoading]="loading"  [theme]="{width: '100%', height: '100px'}">
+          <mat-form-field appearance="fill">
+            <mat-label>Password</mat-label>
+            <input type="password" matInput [formControlName]="'password'" [errorStateMatcher]="matcher">
+            <mat-error *ngIf="form.controls.password.hasError('required')">
+              Password is <strong>required</strong>
+            </mat-error>
+          </mat-form-field>
 
-  <p>login works!</p>
+          <mat-error *ngIf="error">
+            Incorrect email / password combo
+          </mat-error>
 
-  <button (click)="loginClick()">Login</button>
-</app-skeleton>
+          <app-skeleton class="login-button" [isLoading]="loading" [theme]="{height: '50px', width: '100px'}">
+            <button mat-raised-button color="primary" [disabled]="loading || !form.controls.email.valid || !form.controls.password.valid" mat-button>Login</button>
+          </app-skeleton>
+
+        </form>
+        <a routerLink="/register">Not registered? Register now!</a>
+      </mat-card-content>
+    </mat-card>
+
+  </div>
+
+</div>
