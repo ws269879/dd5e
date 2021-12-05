@@ -128,6 +128,15 @@ export class ApiService {
     }
   }
 
+  async getRaceDetails(race: string) {
+    try {
+      const url = `${this.baseUrl}/races/${race}`
+      return await this._http.get<IRaceDetails>(url).toPromise()
+    } catch (e) {
+      return null
+    }
+  }
+
   async getSkills() {
     try {
       const url = `${this.baseUrl}/skills`
@@ -500,6 +509,46 @@ export interface ISpellDetails {
     url: string;
   }[];
   subclasses:{
+    index: string;
+    name: string;
+    url: string;
+  }[];
+  url: string;
+}
+
+export interface IRaceDetails {
+  index: string;
+  name: string;
+  speed: number;
+  ability_bonuses: {
+    ability_score:{
+      index: string;
+      name: string;
+      url: string;
+    };
+    bonus: number;
+  }[];
+  age: string;
+  alignment: string;
+  size: string;
+  size_description: string;
+  starting_proficiencies: {
+    index: string;
+    name: string;
+    url: string;
+  }[];
+  languages:{
+    index: string;
+    name: string;
+    url: string;
+  }[];
+  language_desc: string;
+  traits:{
+    index: string;
+    name: string;
+    url: string;
+  }[];
+  subraces:{
     index: string;
     name: string;
     url: string;

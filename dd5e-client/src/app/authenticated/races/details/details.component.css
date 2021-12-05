@@ -1,0 +1,11 @@
+.mat-list-item {
+  height: auto !important;
+}
+
+.mat-divider {
+  padding-bottom: 20px !important;
+}
+
+.mat-list-item :last-child {
+  padding-bottom: 20px
+}
