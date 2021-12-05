@@ -9,7 +9,6 @@ function setMyEnv(bool $secondTry = false): bool {
         }
 
         $lines = file($path, FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
-        var_dump($lines);
         foreach ($lines as $line) {
 
             if (strpos(trim($line), '#') === 0) {

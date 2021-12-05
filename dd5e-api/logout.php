@@ -22,18 +22,11 @@ if (!correctRequestType('GET')) {
     $httpResponse->fullResponse();
 }
 
-$user = authMiddleware($myDb);
-$dbResponse = $myDb->fetch("SELECT `users`.`firstName`, `users`.`lastName`, `users`.`email` FROM `users` WHERE `email` = ?", array($user->getEmail()));
 
-if ($dbResponse === false) {
-    $httpResponse->setStatusCode(404);
-    $httpResponse->fullResponse();
-}
+$user = authMiddleware($myDb);
+setcookie('auth', '',  time() - 3600);
+
 
 $httpResponse->setStatusCode(200);
-$httpResponse->setContent(array(
-    'firstName'=>$dbResponse['firstName'], 
-    'lastName'=>$dbResponse['lastName'], 
-    'email'=>$dbResponse['email'], 
-));
+$httpResponse->setContent('success');
 $httpResponse->fullResponse();

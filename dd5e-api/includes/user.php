@@ -10,19 +10,19 @@ class User {
         $this->email = $email;
     }
 
-    function getFullName(): string {
+    public function getFullName(): string {
         return $this->firstName.' '.$this->lastName;
     }
 
-    function getFirstName(): string {
+    public function getFirstName(): string {
         return $this->firstName;
     }
 
-    function getLastName(): string {
+    public function getLastName(): string {
         return $this->lastName;
     }
 
-    function getEmail(): string {
+    public function getEmail(): string {
         return $this->email;
     }
 }
