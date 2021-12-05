@@ -1,5 +1,14 @@
 # Dd5eClient
 
+## Accessing the application
+A login account to use if you wish is:
+email: test@test2.com
+password: test
+
+*You can also create your our account on the 'register' page*
+
+## Dev
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.0.3.
 
 ## Development server
