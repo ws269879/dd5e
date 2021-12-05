@@ -59,6 +59,7 @@ export class LoginService {
       }
     } catch (e) {
       this.loggedIn = false
+      console.log(e)
       return false
     }
     this.loggedIn = false

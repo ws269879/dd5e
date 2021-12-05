@@ -45,8 +45,8 @@ function validToken(DBConnection $dbConnection, ?string $token): ?User {
     if ($auth === false) {
         return null;
     }
-    $created = new DateTime($auth['createdAt']);
-    $expectedExpiry = new DateTime($auth['createdAt']);
+    $created = new DateTime($auth['refreshedAt']);
+    $expectedExpiry = new DateTime($auth['refreshedAt']);
     $expectedExpiry->modify("+{$auth['expiryInMins']} minutes");
     $diff = $expectedExpiry->getTimestamp() - $created->getTimestamp();
 

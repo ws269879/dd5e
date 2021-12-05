@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  loginApi: 'http://192.168.64.2'
+  loginApi: 'https://atwd2-ws269879.remote.ac/api'
 };
 
 /*

@@ -2,7 +2,7 @@ const writeFile = require('fs').writeFile
 const targetPath = './src/environments/environment.prod.ts'
 const envConfigFile = `export const environment = {
     production: true,
-    loginApi: 'https://localhost/api'
+    loginApi: 'https://atwd2-ws269879.remote.ac/api'
 }
 `
 writeFile(targetPath, envConfigFile, err => {
