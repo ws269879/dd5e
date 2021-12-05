@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import {from, Observable, ReplaySubject, switchMap, take} from 'rxjs'
 import {HttpClient, HttpErrorResponse, HttpHeaders, HttpResponse} from '@angular/common/http'
+import {environment} from '../../environments/environment'
 
 @Injectable({
   providedIn: 'root'
@@ -9,7 +10,7 @@ export class LoginService {
 
   public userDetails$: Observable<IUserDetails | null>
   public loggedIn: boolean = false
-  private baseUrl = 'http://192.168.64.2'
+  private baseUrl = environment.loginApi
   private _userDetailsSubject: ReplaySubject<IUserDetails | null> = new ReplaySubject(1)
   private _userDetails?: IUserDetails
 
