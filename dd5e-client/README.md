@@ -2,16 +2,29 @@
 
 ## Accessing the application
 A login account to use if you wish is:
-email: test@test2.com
+USER:
+email: test@test.com
 password: test
+ADMIN:
+email: adminuser@test.com
+password: admin
 
 *You can also create your our account on the 'register' page*
+
+Run `npm i` before attempting to view code as node_modules are needed for linting.
+
+Would also recommend viewing codebase in WebStorm or VS Code
+
+`/dist` folder contains an exact replica of the live site at [https://atwd2-ws269879.remote.ac](https://atwd2-ws269879.remote.ac)
 
 ## Dev
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.0.3.
 
+
 ## Development server
+
+Run `npm i`.
 
 Run `npm run start` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 

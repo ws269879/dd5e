@@ -23,7 +23,7 @@
       <mat-nav-list role="list" style="padding-left: 20px; padding-right: 20px ">
         <a mat-list-item (click)="drawer.close()" routerLink="/app">Dashboard</a>
         <mat-divider></mat-divider>
-        <div *ngFor="let card of cardsService.getCards()">
+        <div *ngFor="let card of cardsService.getCards(user)">
           <div *ngIf="card.links.length > 1">
             <a mat-list-item (click)="drawer.close()" [routerLink]="card.links[0].link">{{ card.title  }}</a>
             <a mat-list-item (click)="drawer.close()" class="nav-link-child" *ngFor="let link of card.links" mat-line [routerLink]="link.link">{{ link.text }}</a>

@@ -1,5 +1,5 @@
 import {AfterViewInit, Component, Input, ViewChild} from '@angular/core'
-import {IResponseData} from '../../service/api.service'
+import {IResponseData, IUserRow} from '../../service/api.service'
 import {MatTableDataSource} from '@angular/material/table'
 import {MatPaginator} from '@angular/material/paginator'
 import {MatSort} from '@angular/material/sort'
@@ -12,9 +12,9 @@ import {Subject} from 'rxjs'
 })
 export class TableComponent implements AfterViewInit {
   @Input() displayedColumns: string[]
-  @Input() dataSource: MatTableDataSource<IResponseData>
+  @Input() dataSource: MatTableDataSource<IResponseData | IUserRow>
   @Input() paginationOptions: number[] = [5, 25, 50]
-  @Input() rowClickSubject: Subject<IResponseData>
+  @Input() rowClickSubject: Subject<IResponseData | IUserRow>
 
   @ViewChild(MatPaginator) paginator: MatPaginator
   @ViewChild(MatSort) sort: MatSort

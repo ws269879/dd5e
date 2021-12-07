@@ -95,7 +95,8 @@ export class LoginService {
 
 export interface IRegisterDetails extends ILoginDetails{
   firstname: string,
-  lastname: string
+  lastname: string,
+  admin?: boolean
 }
 
 export interface ILoginDetails {
@@ -107,5 +108,5 @@ export interface IUserDetails {
   firstName: string,
   lastName: string,
   email: string,
-  admin?: boolean
+  role: string
 }

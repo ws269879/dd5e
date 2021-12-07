@@ -1,10 +1,41 @@
 import { Injectable } from '@angular/core';
 import {ICard} from '../component/card/card.component'
+import {IUserDetails} from './login.service'
 
 @Injectable({
   providedIn: 'root'
 })
 export class CardsService {
+
+  adminCards: ICard[] = [
+    {
+      title: 'Users',
+      content: 'Manage users',
+      links: [
+        {
+          text: 'View Users',
+          link: '/app/admin/users'
+        },
+        {
+          text: 'Add user',
+          link: '/app/admin/register'
+        }
+      ],
+      image: {
+        link: '/assets/img/add_user.svg',
+        type: 'img'
+      }
+    },
+    {
+      title: 'Stats - In development',
+      content: 'View website stats - Currently in development - Coming Soon',
+      links: [],
+      image: {
+        link: '/assets/img/stats.svg',
+        type: 'img'
+      }
+    }
+  ]
 
   cards: ICard[] = [
     {
@@ -147,11 +178,30 @@ export class CardsService {
         type: 'img'
       }
     },
+    {
+      title: 'Admin',
+      content: 'Admin dashboard',
+      links: [
+        {
+          text: 'admin',
+          link: '/app/admin'
+        }
+      ],
+      image: {
+        link: '/assets/img/powerful.svg',
+        type: 'img'
+      },
+      admin: true
+    },
   ]
 
   constructor() { }
 
-  public getCards(): ICard[] {
-    return this.cards
+  public getCards(user: IUserDetails): ICard[] {
+    return this.cards.filter((card) => !card.admin || user?.role.toLowerCase() === 'admin')
+  }
+
+  public getAdminCards(): ICard[] {
+    return this.adminCards
   }
 }

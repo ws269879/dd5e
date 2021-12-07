@@ -1,6 +1,16 @@
 <header class="page-header">
   <div class="o-grid">
     <div class="page-header__title">
+      <div style="display: flex; flex-direction: row">
+        <a routerLink="/app"
+           matTooltip="Back to dashboard"
+           mat-icon-button
+           aria-label="Back"
+        >
+          <mat-icon>keyboard_backspace</mat-icon>
+          Back
+        </a>
+      </div>
       <h1>Dashboard</h1>
       <h2>{{time < 12 ? 'Good Morning' : 'Afternoon'}} {{user.firstName}} {{user.lastName}}</h2>
     </div>
@@ -12,7 +22,7 @@
 
     <div class="card-grid">
 
-      <app-card *ngFor="let card of cardsService.getCards(user)"
+      <app-card *ngFor="let card of cardsService.getAdminCards()"
                 [title]="card.title"
                 [content]="card.content"
                 [links]="card.links"

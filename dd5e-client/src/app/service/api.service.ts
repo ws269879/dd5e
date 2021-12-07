@@ -1,5 +1,6 @@
 import {Injectable} from '@angular/core'
 import {HttpClient} from '@angular/common/http'
+import {environment} from '../../environments/environment'
 
 @Injectable({
   providedIn: 'root'
@@ -7,6 +8,7 @@ import {HttpClient} from '@angular/common/http'
 export class ApiService {
 
   private baseUrl = 'https://www.dnd5eapi.co/api'
+  private baseCustomAPIUrl = environment.loginApi
 
   constructor(private _http: HttpClient) { }
 
@@ -186,6 +188,25 @@ export class ApiService {
     try {
       const url = `${this.baseUrl}/traits/${trait}`
       return await this._http.get<ITraitDetails>(url).toPromise()
+    } catch (e) {
+      return null
+    }
+  }
+
+  async getUsers() {
+    try {
+      const url = `${this.baseCustomAPIUrl}/users`
+      return await this._http.get<IUserRow[]>(url, {withCredentials: true}).toPromise()
+    } catch (e) {
+      return null
+    }
+  }
+
+  async deleteUser(email: string) {
+    try {
+      const url = `${this.baseCustomAPIUrl}/user`
+      const res = await this._http.delete<Response>(url, {body: {email}, withCredentials: true}).toPromise()
+      return res.status === 200
     } catch (e) {
       return null
     }
@@ -584,3 +605,10 @@ export interface ITraitDetails {
   url: string;
 }
 
+export interface IUserRow {
+  firstname: string;
+  lastname: string;
+  role: string;
+  createdAt: string;
+  email: string;
+}

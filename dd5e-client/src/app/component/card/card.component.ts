@@ -36,7 +36,8 @@ export interface ICard {
   title: string,
   links: ICardLinks[],
   content: string,
-  image: ICardImg
+  image: ICardImg,
+  admin?: boolean
 }
 
 interface ICardImg {

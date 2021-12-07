@@ -1,0 +1,31 @@
+<header class="page-header">
+  <div class="o-grid">
+    <div class="page-header__title">
+      <div style="display: flex; flex-direction: row">
+        <a routerLink="/app/admin"
+           matTooltip="Back to admin dashboard"
+           mat-icon-button
+           aria-label="Back"
+        >
+          <mat-icon>keyboard_backspace</mat-icon>
+          Back
+        </a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<div class="page-content">
+  <div class="o-grid" style="padding-top: 0">
+    <p>Click to delete a user</p>
+    <app-skeleton [isLoading]="!dataSource" [theme]="{width: '100%', height: '100px'}">
+      <app-table *ngIf="dataSource"
+                 [dataSource]="dataSource"
+                 [displayedColumns]="displayedColumns"
+                 [rowClickSubject]="rowClickSubject"
+      >
+      </app-table>
+    </app-skeleton>
+  </div>
+</div>
+

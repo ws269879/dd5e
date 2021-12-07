@@ -21,6 +21,8 @@ import {SkillsDetailsComponent} from './skills/details/details.component'
 import {SpellsDetailsComponent} from './spells/details/details.component'
 import {RacesDetailsComponent} from './races/details/details.component'
 import {TraitsDetailsComponent} from './traits/details/details.component'
+import {SessionGuard} from '../service/session-guard.service'
+import {AdminSessionGuard} from '../service/admin-session-guard.service'
 
 const routes: Routes = [
   {
@@ -156,7 +158,13 @@ const routes: Routes = [
         component: TraitsDetailsComponent
       }
     ]
+  },
+  {
+    path: 'admin',
+    canActivate: [AdminSessionGuard],
+    loadChildren: () => import('./admin/admin.module').then(m => m.AdminModule)
   }
+
 ]
 
 @NgModule({
