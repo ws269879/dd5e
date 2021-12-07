@@ -38,9 +38,9 @@ $user = authMiddleware($myDb);
 
 if (correctRequestType('POST')) {
 
-    $validType = $myDb->fetch("SELECT * FROM `types` WHERE `type` LIKE ?;", array($type));
+    $validType = $myDb->fetchOne("SELECT * FROM `types` WHERE `type` LIKE ?;", array($type));
 
-    $favs = $myDb->insert(
+    $favs = $myDb->run(
         'INSERT INTO `favourites` (`item`, `email`, `type`) VALUES (?, ?, ?);',
         array($item, $user->getEmail(), $type)
     );
@@ -57,7 +57,7 @@ if (correctRequestType('POST')) {
 
 } else {
 
-    $favs = $myDb->insert(
+    $favs = $myDb->run(
         'DELETE FROM `favourites` WHERE `favourites`.`item` LIKE ? AND `favourites`.`email` LIKE ? AND `favourites.type` LIKE ?;' ,
         array($item, $user->getEmail(), $type)
     );

@@ -22,11 +22,11 @@ if (!correctRequestType('GET')) {
     $httpResponse->fullResponse();
 }
 
-
 $user = authMiddleware($myDb);
+// Clear session cookie auth
 setcookie('auth', '',  time() - 3600);
 
-
+// Response
 $httpResponse->setStatusCode(200);
 $httpResponse->setContent('success');
 $httpResponse->fullResponse();

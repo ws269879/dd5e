@@ -24,7 +24,7 @@ if (!correctRequestType('GET')) {
 
 $user = authMiddleware($myDb);
 
-$favs = $myDb->fetchAll(
+$favs = $myDb->fetchMultiple(
     'SELECT `favourites`.`item`, `favourites`.`type` FROM `favourites` WHERE `email` LIKE ?;',
     array($user->getEmail())
 );

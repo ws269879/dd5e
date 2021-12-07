@@ -3,11 +3,13 @@ class User {
     private string $firstName;
     private string $lastName;
     private string $email;
+    private bool $admin;
 
-    function __construct(string $firstName, string $lastName, string $email) {
+    function __construct(string $firstName, string $lastName, string $email, bool $admin = false) {
         $this->firstName = $firstName;
         $this->lastName = $lastName;
         $this->email = $email;
+        $this->admin = $admin;
     }
 
     public function getFullName(): string {
@@ -24,5 +26,9 @@ class User {
 
     public function getEmail(): string {
         return $this->email;
+    }
+
+    public function isAdmin(): string {
+        return $this->admin;
     }
 }

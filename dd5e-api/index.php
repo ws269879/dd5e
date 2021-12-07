@@ -5,18 +5,13 @@ require_once(__DIR__.'/includes/dot-env.php');
 
 allowOptions();
 
+// Set environment variables
 setMyEnv();
-
 
 $httpResponse = new HTTPResponse();
 
 $httpResponse->setStatusCode(200);
-$salt = getenv('SALT', true);
-$pepper = getenv('PEPPER', true);
-$host = getenv('DB_HOST');
-$name = getenv('DB_NAME');
-$username = getenv('DB_USERNAME');
-$password = getenv('DB_PASSWORD');
+// Display project settings at api root
 $httpResponse->setContent(array(
     'project'=>'dd5e-api-project',
     'createdBy'=>'ws269879',

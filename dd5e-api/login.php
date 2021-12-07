@@ -37,7 +37,7 @@ $email = $_POST["email"];
 $salt = getenv('SALT', true);
 $pepper = getenv('PEPPER', true);
 $pass = $salt.$password.$pepper;
-$dbResponse = $myDb->fetch("SELECT `users`.`password` FROM `users` WHERE `email` = ?", array($email));
+$dbResponse = $myDb->fetchOne("SELECT `users`.`password` FROM `users` WHERE `email` = ?", array($email));
 
 if ($dbResponse === false) {
     $httpResponse->setStatusCode(404);
@@ -51,11 +51,11 @@ if (!password_verify($pass, $dbResponse['password'])) {
 
 $now = new DateTime();
 $token = password_hash(getenv('TOKEN').$email.$now->format('Y-m-d H:i:s'), PASSWORD_BCRYPT);
-$myDb->insert(
+$myDb->run(
     "INSERT INTO `auth` (`token`, `email`, `createdAt`, `refreshedAt`, `expiryInMins`) VALUES (?, ?, current_timestamp(), current_timestamp(), '60');",
     array($token, $email)
 );
-setcookie('auth', $token);
+setcookie('auth', $token, time() + (60 * 60));
 $httpResponse->setStatusCode(200);
 $httpResponse->setContent('success');
 $httpResponse->fullResponse();
